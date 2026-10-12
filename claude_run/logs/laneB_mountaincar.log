@@ -1,0 +1,74 @@
+
+  Training REINFORCE on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/REINFORCE_MountainCar-v0.pt
+[REINFORCE plain seed=0] last10=-200.0 (238s)
+
+  Training PPO on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_MountainCar-v0.pt
+[PPO plain seed=0] last10=-200.0 (325s)
+
+  Training REINFORCE on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/REINFORCE_MountainCar-v0.pt
+[REINFORCE shaped seed=0] last10=-200.0 (233s)
+
+  Training PPO on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_MountainCar-v0.pt
+[PPO shaped seed=0] last10=-200.0 (337s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/mountaincar.json
+
+  Training REINFORCE on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/REINFORCE_MountainCar-v0.pt
+[REINFORCE plain seed=1] last10=-200.0 (218s)
+
+  Training PPO on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_MountainCar-v0.pt
+[PPO plain seed=1] last10=-200.0 (351s)
+
+  Training REINFORCE on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/REINFORCE_MountainCar-v0.pt
+[REINFORCE shaped seed=1] last10=-200.0 (250s)
+
+  Training PPO on MountainCar-v0...
+    iter  20 | Return: -200.0
+    iter  40 | Return: -200.0
+    iter  60 | Return: -200.0
+    iter  80 | Return: -200.0
+    iter 100 | Return: -200.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_MountainCar-v0.pt
+[PPO shaped seed=1] last10=-200.0 (319s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/mountaincar.json

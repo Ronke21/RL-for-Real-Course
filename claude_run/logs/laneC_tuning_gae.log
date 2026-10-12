@@ -1,0 +1,108 @@
+gamma=1.0 lambda=1.0: max|main - reference| = 1.43e-06
+gamma=1.0 lambda=0.95: max|main - reference| = 1.58e-06
+gamma=1.0 lambda=0.0: max|main - reference| = 0.00e+00
+gamma=0.99 lambda=1.0: max|main - reference| = 3.58e-06
+gamma=0.99 lambda=0.95: max|main - reference| = 1.43e-06
+gamma=0.99 lambda=0.0: max|main - reference| = 0.00e+00
+lambda=1 vs G_t - V: 1.9073486328125e-06
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/gae_check.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -64.7
+    iter  40 | Return: -20.7
+    iter  60 | Return: -37.9
+    iter  80 | Return: 12.1
+    iter 100 | Return: 6.6
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[default (lr1e-4, g1.0, lam1.0, 10ep) seed=0] last10=-0.6 (371s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -32.8
+    iter  40 | Return: 1.3
+    iter  60 | Return: -19.4
+    iter  80 | Return: -16.0
+    iter 100 | Return: 159.8
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[lr 3e-4 seed=0] last10=67.9 (370s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -78.8
+    iter  40 | Return: -22.2
+    iter  60 | Return: 33.7
+    iter  80 | Return: 73.4
+    iter 100 | Return: 122.9
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[gamma 0.99 seed=0] last10=108.3 (378s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -54.8
+    iter  40 | Return: -27.9
+    iter  60 | Return: 47.1
+    iter  80 | Return: 66.6
+    iter 100 | Return: -2.0
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[lambda 0.95 seed=0] last10=-25.1 (374s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -112.7
+    iter  40 | Return: 71.7
+    iter  60 | Return: 179.4
+    iter  80 | Return: 24.6
+    iter 100 | Return: 172.1
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[lr 3e-4 + g0.99 + lam0.95 seed=0] last10=111.5 (362s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -70.4
+    iter  40 | Return: 5.9
+    iter  60 | Return: -59.6
+    iter  80 | Return: -43.4
+    iter 100 | Return: -17.4
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[default (lr1e-4, g1.0, lam1.0, 10ep) seed=1] last10=-18.1 (365s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -18.7
+    iter  40 | Return: 35.8
+    iter  60 | Return: 91.1
+    iter  80 | Return: 3.3
+    iter 100 | Return: 131.6
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[lr 3e-4 seed=1] last10=116.0 (365s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -11.1
+    iter  40 | Return: -91.7
+    iter  60 | Return: 32.6
+    iter  80 | Return: 89.0
+    iter 100 | Return: 177.8
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[gamma 0.99 seed=1] last10=177.2 (373s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -66.6
+    iter  40 | Return: 78.3
+    iter  60 | Return: -41.7
+    iter  80 | Return: -30.5
+    iter 100 | Return: 40.2
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[lambda 0.95 seed=1] last10=23.1 (353s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -33.7
+    iter  40 | Return: -53.3
+    iter  60 | Return: 177.1
+    iter  80 | Return: 229.0
+    iter 100 | Return: 168.6
+    Saved checkpoint: /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/ckpt/PPO_LunarLander-v3.pt
+[lr 3e-4 + g0.99 + lam0.95 seed=1] last10=187.3 (354s)
+wrote /home/nlp/ronke21/RL for Real Course/toy-ppo/claude_run/results/tuning.json

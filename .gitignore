@@ -3,3 +3,6 @@ __pycache__/
 checkpoints/
 plots/
 backup/
+claude_run/results/ckpt/
+claude_run/logs/*.out
+claude_run/logs/*.err

@@ -1,0 +1,181 @@
+==================================================
+  Testing your TODO implementations
+==================================================
+
+Testing collect_rollout_step...
+  return types ................ OK
+  shapes ...................... OK
+  log_prob is negative ........ OK
+  value_net=None → zero ....... OK
+  50 consecutive steps ........ OK
+  PASSED
+Testing compute_returns...
+  gamma=1.0 basic ............. OK
+  gamma=0.5 discounting ....... OK
+  episode boundary isolation .. OK
+  PASSED
+Testing compute_reinforce_loss...
+  correct value ............... OK
+  gradients flow .............. OK
+  PASSED
+Testing compute_value_loss...
+  returns scalar loss ......... OK
+  zero loss when perfect ...... OK
+  gradients flow to network ... OK
+  PASSED
+Testing compute_ppo_loss...
+  ratio=1, no clipping ....... OK
+  within bounds, no clip ..... OK
+  clip high ratio + pos adv .. OK
+  clip low ratio + neg adv ... OK
+  PASSED
+
+Results: 5 passed, 0 failed, 0 not implemented (out of 5)
+
+All tests passed! You can now run:  python main.py
+Device: cpu
+Config: 100 iterations × 4096 steps, γ=1.0, lr=0.001
+
+============================================================
+  Environment: CartPole-v1
+============================================================
+
+  Training REINFORCE on CartPole-v1...
+    iter  20 | Return: 61.2
+    iter  40 | Return: 219.4
+    iter  60 | Return: 296.0
+    iter  80 | Return: 377.0
+    iter 100 | Return: 440.3
+    Saved checkpoint: checkpoints/REINFORCE_CartPole-v1.pt
+
+  Training PPO on CartPole-v1...
+    iter  20 | Return: 262.7
+    iter  40 | Return: 463.0
+    iter  60 | Return: 357.7
+    iter  80 | Return: 423.8
+    iter 100 | Return: 473.5
+    Saved checkpoint: checkpoints/PPO_CartPole-v1.pt
+
+  Done (578s). Plotting...
+  Plot saved to plots/CartPole-v1.png
+
+============================================================
+  Environment: LunarLander-v3
+============================================================
+
+  Training REINFORCE on LunarLander-v3...
+    iter  20 | Return: -132.3
+    iter  40 | Return: -110.6
+    iter  60 | Return: -113.7
+    iter  80 | Return: -107.0
+    iter 100 | Return: -102.7
+    Saved checkpoint: checkpoints/REINFORCE_LunarLander-v3.pt
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -95.7
+    iter  40 | Return: -35.1
+    iter  60 | Return: -22.9
+    iter  80 | Return: -37.0
+    iter 100 | Return: -13.5
+    Saved checkpoint: checkpoints/PPO_LunarLander-v3.pt
+
+  Done (626s). Plotting...
+  Plot saved to plots/LunarLander-v3.png
+
+All done!
+Device: cpu
+Config: 100 iterations × 4096 steps, γ=1.0, lr=0.001
+
+============================================================
+  Environment: CartPole-v1
+============================================================
+
+  Training REINFORCE on CartPole-v1...
+    iter  20 | Return: 61.2
+    iter  40 | Return: 219.4
+    iter  60 | Return: 296.0
+    iter  80 | Return: 377.0
+    iter 100 | Return: 440.3
+    Saved checkpoint: checkpoints/REINFORCE_CartPole-v1.pt
+
+  Training Actor-Critic on CartPole-v1...
+    iter  20 | Return: 54.6
+    iter  40 | Return: 180.8
+    iter  60 | Return: 280.9
+    iter  80 | Return: 368.0
+    iter 100 | Return: 418.6
+    Saved checkpoint: checkpoints/Actor-Critic_CartPole-v1.pt
+
+  Training PPO on CartPole-v1...
+    iter  20 | Return: 213.8
+    iter  40 | Return: 429.2
+    iter  60 | Return: 398.4
+    iter  80 | Return: 318.7
+    iter 100 | Return: 500.0
+    Saved checkpoint: checkpoints/PPO_CartPole-v1.pt
+
+  Done (834s). Plotting...
+  Plot saved to plots/CartPole-v1_with_ac.png
+
+============================================================
+  Environment: LunarLander-v3
+============================================================
+
+  Training REINFORCE on LunarLander-v3...
+    iter  20 | Return: -130.7
+    iter  40 | Return: -127.4
+    iter  60 | Return: -115.2
+    iter  80 | Return: -121.7
+    iter 100 | Return: -122.7
+    Saved checkpoint: checkpoints/REINFORCE_LunarLander-v3.pt
+
+  Training Actor-Critic on LunarLander-v3...
+    iter  20 | Return: -137.7
+    iter  40 | Return: -118.0
+    iter  60 | Return: -121.6
+    iter  80 | Return: -123.1
+    iter 100 | Return: -104.9
+    Saved checkpoint: checkpoints/Actor-Critic_LunarLander-v3.pt
+
+  Training PPO on LunarLander-v3...
+    iter  20 | Return: -74.8
+    iter  40 | Return: -24.9
+    iter  60 | Return: 15.5
+    iter  80 | Return: 8.5
+    iter 100 | Return: 2.0
+    Saved checkpoint: checkpoints/PPO_LunarLander-v3.pt
+
+  Done (887s). Plotting...
+  Plot saved to plots/LunarLander-v3_with_ac.png
+
+All done!
+  Env: CartPole-v1  |  Agent: random
+  Episode return: 23.0  (23 steps)
+  Saved: plots/random_CartPole-v1.gif  (23 frames)
+  Env: CartPole-v1  |  Agent: REINFORCE
+  Loaded: checkpoints/REINFORCE_CartPole-v1.pt
+  Episode return: 453.0  (453 steps)
+  Saved: plots/REINFORCE_CartPole-v1.gif  (453 frames)
+  Env: CartPole-v1  |  Agent: PPO
+  Loaded: checkpoints/PPO_CartPole-v1.pt
+  Episode return: 500.0  (500 steps)
+  Saved: plots/PPO_CartPole-v1.gif  (500 frames)
+  Env: CartPole-v1  |  Agent: Actor-Critic
+  Loaded: checkpoints/Actor-Critic_CartPole-v1.pt
+  Episode return: 500.0  (500 steps)
+  Saved: plots/Actor-Critic_CartPole-v1.gif  (500 frames)
+  Env: LunarLander-v3  |  Agent: random
+  Episode return: -91.1  (66 steps)
+  Saved: plots/random_LunarLander-v3.gif  (66 frames)
+  Env: LunarLander-v3  |  Agent: REINFORCE
+  Loaded: checkpoints/REINFORCE_LunarLander-v3.pt
+  Episode return: -100.2  (88 steps)
+  Saved: plots/REINFORCE_LunarLander-v3.gif  (88 frames)
+  Env: LunarLander-v3  |  Agent: PPO
+  Loaded: checkpoints/PPO_LunarLander-v3.pt
+  Episode return: -19.9  (103 steps)
+  Saved: plots/PPO_LunarLander-v3.gif  (103 frames)
+  Env: LunarLander-v3  |  Agent: Actor-Critic
+  Loaded: checkpoints/Actor-Critic_LunarLander-v3.pt
+  Episode return: -59.9  (119 steps)
+  Saved: plots/Actor-Critic_LunarLander-v3.gif  (119 frames)

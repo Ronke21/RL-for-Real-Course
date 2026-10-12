@@ -99,7 +99,18 @@ def collect_rollout_step(obs, env, policy, value_net):
     # 3. If done: reset the environment
     # 4. Return: action, log_prob, value, reward, done, info, next_obs
     # ──────────────────────────────────────────────────────────────
-    raise NotImplementedError("TODO 1: Implement collect_rollout_step")
+
+    with torch.no_grad():
+        action, log_prob = policy.get_action(obs) # get next action according to policy
+        value = value_net(obs) if value_net is not None else torch.tensor(0.0)
+
+    next_obs, reward, terminated, truncated, info = env.step(action.item())
+    done = terminated or truncated
+
+    if done:
+        next_obs, _ = env.reset()
+
+    return action, log_prob, value, reward, done, info, next_obs
 
 
 def collect_rollouts(env, policy, value_net=None, num_steps=2048):
@@ -169,7 +180,15 @@ def compute_returns(rewards, dones, gamma=GAMMA):
     # ──────────────────────────────────────────────────────────────
     # TODO 2: Implement discounted returns.  (5-9 lines)
     # ──────────────────────────────────────────────────────────────
-    raise NotImplementedError("TODO 2: Implement compute_returns")
+    T = len(rewards)
+    returns = torch.zeros(T, device=rewards.device)
+    future_return = 0.0
+    for t in reversed(range(T)):
+        if dones[t]:
+            future_return = 0.0
+        future_return = rewards[t] + gamma * future_return
+        returns[t] = future_return
+    return returns
 
 
 def compute_gae(rewards, values, dones, last_value, gamma=GAMMA, gae_lambda=1.0):
@@ -217,7 +236,9 @@ def compute_reinforce_loss(log_probs, returns):
     # ──────────────────────────────────────────────────────────────
     # TODO 3: Implement the REINFORCE loss.  (1-2 lines)
     # ──────────────────────────────────────────────────────────────
-    raise NotImplementedError("TODO 3: Implement compute_reinforce_loss")
+    
+    return -(log_probs * returns).mean()
+
 
 
 def compute_value_loss(value_net, obs, returns):
@@ -234,7 +255,7 @@ def compute_value_loss(value_net, obs, returns):
     # ──────────────────────────────────────────────────────────────
     # TODO 4: Implement the value function loss.  (1-2 lines)
     # ──────────────────────────────────────────────────────────────
-    raise NotImplementedError("TODO 4: Implement compute_value_loss")
+    return F.mse_loss(value_net(obs), returns)
 
 
 def compute_ppo_loss(old_log_probs, new_log_probs, advantages, clip_eps=PPO_CLIP_EPS):
@@ -255,7 +276,11 @@ def compute_ppo_loss(old_log_probs, new_log_probs, advantages, clip_eps=PPO_CLIP
     # ──────────────────────────────────────────────────────────────
     # TODO 5: Implement the PPO clipped surrogate loss.  (3-4 lines)
     # ──────────────────────────────────────────────────────────────
-    raise NotImplementedError("TODO 5: Implement compute_ppo_loss")
+
+    ratio = (new_log_probs - old_log_probs).exp()
+    clipped_ratio = torch.clamp(ratio, 1.0 - clip_eps, 1.0 + clip_eps)
+    loss = -torch.min(ratio * advantages, clipped_ratio * advantages).mean()
+    return loss
 
 
 # ── Override with reference solutions if enabled ─────────────────
