@@ -1,0 +1,2 @@
+final_A_lr5e-6_300_s43|--max_steps 300 --learning_rate 5e-6 --beta 1e-9 --seed 43
+final_A_lr7e-6_300_s44|--max_steps 300 --learning_rate 7e-6 --beta 1e-9 --per_device_eval_batch_size 64 --seed 44

@@ -1,0 +1,6 @@
+p1_B_strict|--eval_num_samples 200 --per_device_eval_batch_size 64 --reward_mode strict --reward_weights 1.0 0.2 1.0
+p2_C_reuse_cliphigh|--eval_num_samples 200 --per_device_eval_batch_size 64 --reward_mode strict --reward_weights 1.0 0.2 1.0 --num_generations 8 --temperature 1.0 --per_device_train_batch_size 16 --gradient_accumulation_steps 2 --learning_rate 2e-6 --num_iterations 2 --epsilon_high 0.28
+p4_A_klglobal_300|--eval_num_samples 200 --per_device_eval_batch_size 64 --max_steps 300 --beta 0.04
+p8_A_lr1e-5_300|--eval_num_samples 200 --per_device_eval_batch_size 64 --max_steps 300 --learning_rate 1e-5 --beta 1e-9
+e62_A_lr1e-5_300_s42|--max_steps 300 --learning_rate 1e-5 --beta 1e-9 --seed 42
+e62_pe1_rl_full_lr1e-5_300|--max_steps 300 --learning_rate 1e-5 --beta 1e-9 --developer_prompt pe_full

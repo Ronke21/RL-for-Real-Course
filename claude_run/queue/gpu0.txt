@@ -1,0 +1,7 @@
+p2_C_g16|--eval_num_samples 200 --per_device_eval_batch_size 64 --reward_mode strict --reward_weights 1.0 0.2 1.0 --num_generations 16 --temperature 1.0 --per_device_train_batch_size 16 --gradient_accumulation_steps 4 --learning_rate 2e-6
+p1A_reeval_bs16_s42|--eval_only true --checkpoint_path /tmp/ronke21_rlfr/runs/p1_A_baseline/final_model --eval_num_samples 200 --per_device_eval_batch_size 16 --seed 42
+p1A_reeval_bs16_s43|--eval_only true --checkpoint_path /tmp/ronke21_rlfr/runs/p1_A_baseline/final_model --eval_num_samples 200 --per_device_eval_batch_size 16 --seed 43
+p4_A_kllocal_300|--eval_num_samples 200 --per_device_eval_batch_size 64 --max_steps 300 --beta 0.04 --sync_ref_model true --ref_model_sync_steps 10 --ref_model_mixup_alpha 1.0
+p8_A_lr7e-6_300|--eval_num_samples 200 --per_device_eval_batch_size 64 --max_steps 300 --learning_rate 7e-6 --beta 1e-9
+e62_A_lr1e-5_300_s43|--max_steps 300 --learning_rate 1e-5 --beta 1e-9 --seed 43
+e62_pe1_rl_format_lr1e-5_300|--max_steps 300 --learning_rate 1e-5 --beta 1e-9 --developer_prompt pe_format

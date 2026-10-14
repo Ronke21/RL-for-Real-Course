@@ -274,6 +274,11 @@ def _run_training(reasoning_gym_args, training_args, model_args, logger):
         log_reward_variance=reasoning_gym_args.log_reward_variance,
         verbose_variance_logging=reasoning_gym_args.verbose_variance_logging,
         batch_counts_as_step=reasoning_gym_args.batch_counts_as_step,
+        reward_mode=reasoning_gym_args.reward_mode,
+        overlong_start=reasoning_gym_args.overlong_start,
+        task_weighting=reasoning_gym_args.task_weighting,
+        task_weight_every=reasoning_gym_args.task_weight_every,
+        task_weight_floor=reasoning_gym_args.task_weight_floor,
     )
     
     # Log parameter info

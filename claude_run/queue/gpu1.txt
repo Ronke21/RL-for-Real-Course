@@ -1,0 +1,7 @@
+p1_A_baseline|--eval_num_samples 200 --per_device_eval_batch_size 64
+p2_C_lr1e-6|--eval_num_samples 200 --per_device_eval_batch_size 64 --reward_mode strict --reward_weights 1.0 0.2 1.0 --num_generations 8 --temperature 1.0 --per_device_train_batch_size 16 --gradient_accumulation_steps 2 --learning_rate 1e-6
+p3_A_300|--eval_num_samples 200 --per_device_eval_batch_size 64 --max_steps 300
+p7_w_inv_200|--eval_num_samples 200 --per_device_eval_batch_size 64 --datasets {"number_filtering":{"weight":0.68},"string_insertion":{"weight":0.18},"family_relationships":{"weight":0.80},"maze":{"weight":0.87}} --beta 1e-9
+p8_A_lr2e-5_200|--eval_num_samples 200 --per_device_eval_batch_size 64 --learning_rate 2e-5 --beta 1e-9
+e62_A_lr2e-5_200|--learning_rate 2e-5 --beta 1e-9
+e62_A_lr7e-6_400|--max_steps 400 --learning_rate 7e-6 --per_device_eval_batch_size 64

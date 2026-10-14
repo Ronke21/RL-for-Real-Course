@@ -1,5 +1,7 @@
 """Custom GRPO Trainer with reasoning-gym reward functions."""
 
+import ast
+import difflib
 import re
 
 import torch
@@ -15,6 +17,30 @@ try:
     WANDB_AVAILABLE = True
 except ImportError:
     WANDB_AVAILABLE = False
+
+
+def _closeness(task: str, answer, gold) -> float:
+    """Similarity in [0, 1] between a wrong answer and the gold answer, used by reward_mode="partial"."""
+    if answer is None:
+        return 0.0
+    a, g = answer.strip(), str(gold).strip()
+    if task == "maze":
+        try:
+            return 1.0 / (1.0 + abs(int(a) - int(g)))
+        except ValueError:
+            return 0.0
+    if task == "number_filtering":
+        try:
+            pa = {str(x) for x in ast.literal_eval(a)}
+            pg = {str(x) for x in ast.literal_eval(g)}
+        except (ValueError, SyntaxError, TypeError):
+            return 0.0
+        if not pa and not pg:
+            return 1.0
+        return 2 * len(pa & pg) / (len(pa) + len(pg))
+    if task in ("string_insertion", "base_conversion"):
+        return difflib.SequenceMatcher(None, a, g).ratio()
+    return 0.0  # family_relationships: exact only
 
 
 class CustomGRPOTrainer(GRPOTrainer):
@@ -37,13 +63,29 @@ class CustomGRPOTrainer(GRPOTrainer):
         log_reward_variance: bool = True,
         verbose_variance_logging: bool = False,
         batch_counts_as_step: bool = False,
+        reward_mode: str = "orig",
+        overlong_start: int = 256,
+        task_weighting: str = "static",
+        task_weight_every: int = 10,
+        task_weight_floor: float = 0.1,
     ):
+        if reward_mode not in ("orig", "strict", "hybrid", "partial"):
+            raise ValueError(f"Unknown reward_mode: {reward_mode}")
+        if task_weighting not in ("static", "dyn_inv", "dyn_learn"):
+            raise ValueError(f"Unknown task_weighting: {task_weighting}")
+        self.task_weighting = task_weighting
+        self.task_weight_every = task_weight_every
+        self.task_weight_floor = task_weight_floor
+        self._task_counts = {}  # task -> [correct, total] since the last reweighting
+        self._reward_calls = 0
+        self.reward_mode = reward_mode
+        self.overlong_start = overlong_start
+        reward_funcs = [self._accuracy_reward, self._format_reward]
+        if reward_mode == "strict":
+            reward_funcs.append(self._length_reward)
         super().__init__(
             model=model,
-            reward_funcs=[
-                self._accuracy_reward,
-                self._format_reward,
-            ],
+            reward_funcs=reward_funcs,
             args=args,
             processing_class=tokenizer,
             train_dataset=train_dataset,
@@ -114,15 +156,53 @@ class CustomGRPOTrainer(GRPOTrainer):
         
         answers = [extract_answer(c) for c in completions]
         rewards = [
-            self.train_dataset.data.score_answer(answer, item) 
+            self.train_dataset.data.score_answer(answer, item)
             for answer, item in zip(answers, kwargs["item"])
         ]
-        
+        if self.task_weighting != "static":
+            self._update_task_weights(rewards, kwargs["item"])
+        if self.reward_mode in ("strict", "hybrid"):
+            # Eval counts a sample only at score >= 1.0, so partial credit rewards answers eval marks wrong
+            rewards = [1.0 if r >= 1.0 else 0.0 for r in rewards]
+        elif self.reward_mode == "partial":
+            # Exact answers get 1.0; wrong ones get up to 0.5 for being close (task-specific similarity)
+            rewards = [1.0 if r >= 1.0 else 0.5 * _closeness(item["metadata"]["source_dataset"], a, item["answer"])
+                       for r, a, item in zip(rewards, answers, kwargs["item"])]
+
         if self.log_reward_variance:
             self._log_variance(rewards, answers, completions)
         
         return rewards
     
+    def _update_task_weights(self, rewards: list[float], items: list[dict]):
+        """Adaptive task sampling: every task_weight_every reward calls, reset the composite dataset's
+        sampling weights from each task's recent training accuracy (score >= 1.0).
+        dyn_inv:   w = 1 - acc            (more weight on tasks the model still fails)
+        dyn_learn: w = acc * (1 - acc)    (more weight where GRPO groups are most likely to disagree)
+        New weights are averaged 50/50 with the old ones and floored at task_weight_floor."""
+        for r, item in zip(rewards, items):
+            c = self._task_counts.setdefault(item["metadata"]["source_dataset"], [0, 0])
+            c[0] += r >= 1.0
+            c[1] += 1
+        self._reward_calls += 1
+        if self._reward_calls % self.task_weight_every:
+            return
+        composite = self.train_dataset.data
+        new = []
+        for name, old in zip(composite.dataset_names, composite.weights):
+            correct, total = self._task_counts.get(name, [0, 0])
+            if total == 0:
+                new.append(old)
+                continue
+            acc = correct / total
+            w = 1.0 - acc if self.task_weighting == "dyn_inv" else acc * (1.0 - acc) * 4.0
+            new.append(max(self.task_weight_floor, 0.5 * old + 0.5 * w))
+            self._metrics["train"][f"task_acc/{name}"].append(acc)
+        composite.weights = new
+        for name, w in zip(composite.dataset_names, new):
+            self._metrics["train"][f"task_weight/{name}"].append(w)
+        self._task_counts = {}
+
     def _log_variance(self, rewards: list[float], answers: list[str], completions: list[str]):
         """Log the percentage of prompts with reward variance across rollouts."""
         num_gens = self.args.num_generations
@@ -184,8 +264,24 @@ class CustomGRPOTrainer(GRPOTrainer):
         if self._step_count % 10 == 0:
             torch.cuda.empty_cache()
 
+    # One <think> block, then one <answer> block, nothing after; no nested or repeated tags
+    _STRICT_FORMAT = re.compile(
+        r"\s*<think>(?:(?!</?(?:think|answer)>).)*</think>\s*<answer>(?:(?!</?(?:think|answer)>).)+</answer>\s*",
+        re.DOTALL,
+    )
+
+    def _length_reward(self, completions: list[str], completion_ids=None, **kwargs) -> list[float]:
+        """Soft overlong penalty (DAPO): 0 up to overlong_start tokens, linear down to -1 at max_completion_length."""
+        max_len = self.args.max_completion_length
+        span = max(max_len - self.overlong_start, 1)
+        lengths = [len(ids) for ids in completion_ids]
+        return [max(-1.0, min(0.0, (self.overlong_start - n) / span)) for n in lengths]
+
     def _format_reward(self, completions: list[str], **kwargs) -> list[float]:
         """Reward proper formatting with <think> and <answer> tags."""
+        if self.reward_mode == "strict":
+            return [1.0 if self._STRICT_FORMAT.fullmatch(c) else 0.0 for c in completions]
+
         def count_tags(text: str) -> float:
             count = 0.0
             if re.search(r"\s*<think>\s*", text):

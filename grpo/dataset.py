@@ -11,6 +11,24 @@ from reasoning_gym.utils import SYSTEM_PROMPTS
 
 from .config import DatasetConfig
 
+# Prompt-engineering variants of reasoning-gym's DeepSeekZero system prompt (select with developer_prompt=<name>).
+# They target the untrained model's two main failures: bare-word answers without <answer> tags (family
+# relationships) and answering before reasoning, then re-answering in several blocks (only the last counts).
+_FORMAT_RULES = """
+Rules: reason first inside <think> </think> and do not guess the answer early. Then write exactly one <answer> </answer> block containing only the final answer, in the exact format the question asks for (also for one-word answers), and nothing after it.
+"""
+_FORMAT_EXAMPLES = """
+Answer examples: <answer>['-1.5', '23']</answer> (list in the question's format), <answer>7</answer>, <answer>1a3f</answer> (lowercase digits above 9), <answer>grandmother</answer>, <answer>ABCDAEB</answer>
+"""
+_CAREFUL = """
+Check every element, rule or step one at a time, and verify the result before answering.
+"""
+CUSTOM_PROMPTS = {
+    "pe_format": SYSTEM_PROMPTS["DeepSeekZero"] + _FORMAT_RULES,
+    "pe_full": SYSTEM_PROMPTS["DeepSeekZero"] + _FORMAT_RULES + _FORMAT_EXAMPLES,
+    "pe_careful": SYSTEM_PROMPTS["DeepSeekZero"] + _FORMAT_RULES + _CAREFUL,
+}
+
 
 class ReasoningGymDataset(Dataset):
     """
@@ -52,7 +70,7 @@ def prepare_datasets(
     tokenizer,
 ) -> tuple[ReasoningGymDataset, ReasoningGymDataset]:
     """Prepare training and evaluation datasets from config."""
-    developer_prompt = SYSTEM_PROMPTS[config.developer_prompt]
+    developer_prompt = CUSTOM_PROMPTS.get(config.developer_prompt) or SYSTEM_PROMPTS[config.developer_prompt]
 
     # Training dataset specs
     train_dataset_specs = [
@@ -81,7 +99,7 @@ def prepare_datasets(
         "composite", seed=1, size=config.dataset_size, datasets=train_dataset_specs
     )
     eval_data = reasoning_gym.create_dataset(
-        "composite", seed=2, size=config.eval_num_samples, datasets=eval_dataset_specs
+        "composite", seed=62, size=config.eval_num_samples, datasets=eval_dataset_specs
     )
     
     train_dataset = ReasoningGymDataset(

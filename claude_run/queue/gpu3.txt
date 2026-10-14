@@ -1,0 +1,4 @@
+p1_C_strict_hp|--eval_num_samples 200 --per_device_eval_batch_size 64 --reward_mode strict --reward_weights 1.0 0.2 1.0 --num_generations 8 --temperature 1.0 --per_device_train_batch_size 16 --gradient_accumulation_steps 2 --learning_rate 2e-6
+p2_C_bs32|--eval_num_samples 200 --per_device_eval_batch_size 64 --reward_mode strict --reward_weights 1.0 0.2 1.0 --num_generations 8 --temperature 1.0 --per_device_train_batch_size 32 --gradient_accumulation_steps 2 --learning_rate 2e-6
+p3_A_lr5e-6_300|--eval_num_samples 200 --per_device_eval_batch_size 64 --max_steps 300 --learning_rate 5e-6
+p7_w_corr_200|--eval_num_samples 200 --per_device_eval_batch_size 64 --datasets {"number_filtering":{"weight":0.32},"string_insertion":{"weight":0.82},"family_relationships":{"weight":0.20},"maze":{"weight":0.13}} --beta 1e-9

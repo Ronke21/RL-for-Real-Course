@@ -1,0 +1,6 @@
+e62_pe0_base_DeepSeekZero|--eval_only true --per_device_eval_batch_size 64 --developer_prompt DeepSeekZero
+e62_pe0_base_pe_format|--eval_only true --per_device_eval_batch_size 64 --developer_prompt pe_format
+e62_pe0_base_pe_full|--eval_only true --per_device_eval_batch_size 64 --developer_prompt pe_full
+e62_pe0_base_pe_careful|--eval_only true --per_device_eval_batch_size 64 --developer_prompt pe_careful
+e62_pe0_base_default|--eval_only true --per_device_eval_batch_size 64 --developer_prompt default
+e62_partial_lr5e-6_300|--max_steps 300 --learning_rate 5e-6 --reward_mode partial --beta 1e-9
