@@ -1,0 +1,652 @@
+=== START m3_clean_control 2026-10-15_15:05:46 gpu=2 course=work: python -m course.launch 3 train --experiment-name m3_clean_control --headless --seed 0 --num-envs 4096 --batch-size 4096 --training-max-steps 10000000 --checkpoint results/m1_control/last.ckpt --time-limit-minutes 15
+/work/robotics-course/IsaacLab/.venv/bin/python protomotions/train_agent.py --robot-name g1 --experiment-path course/module_1_train_no_dr/experiment.py --motion-file course/data/walking/robot.motion --experiment-name m3_clean_control --seed 0 --batch-size 4096 --training-max-steps 10000000 --checkpoint results/m1_control/last.ckpt --simulator isaaclab --num-envs 4096 --headless
+INFO:__main__: WARM START: Using checkpoint for initialization: results/m1_control/last.ckpt
+INFO:__main__: WARM_START: Building configs from experiment file
+INFO:__main__: Using original experiment path: course/module_1_train_no_dr/experiment.py
+INFO:__main__: Loading experiment module from: course/module_1_train_no_dr/experiment.py
+INFO:absl: MUJOCO_GL is not set, so an OpenGL backend will be chosen automatically.
+/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/glfw/__init__.py:917: GLFWError: (65550) b'X11: The DISPLAY environment variable is missing'
+  warnings.warn(message, GLFWError)
+INFO:absl: Successfully imported OpenGL backend: glfw
+INFO:absl: MuJoCo library version is: 3.8.0
+<unknown>:4: SyntaxWarning: invalid escape sequence '\*'
+INFO: Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+INFO:lightning.fabric.utilities.distributed: Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+INFO: ----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+INFO:lightning.pytorch.utilities.rank_zero: ----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+INFO:isaaclab.app.app_launcher: No visualizer was selected, so running in headless mode. To launch a visualizer app, pass '--viz <names>' (for example '--viz kit').
+INFO:isaaclab.app.app_launcher: Using device: cuda:0
+INFO:isaaclab.app.app_launcher: Loading experience file: /work/robotics-course/IsaacLab/apps/isaaclab.python.headless.kit
+DEBUG:asyncio: Using selector: EpollSelector
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1792065954.352390      54 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1792065954.352431      54 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Loading user config located at: '/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-10-15T12:05:54Z [0ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-15T12:05:54Z [38ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-10-15T12:05:54Z [112ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderHw.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T12:05:54Z [113ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderGlsl.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T12:05:54Z [116ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libusd_usdBakeMtlx.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+[ISAACLAB] AppLauncher initialization complete
+[ISAACLAB] Kit version: 110.1.1+production.305458.6312fa25.gl
+[ISAACLAB] Kit kernel:  210.1.5+release.12978.b22b555f.gl
+[ISAACLAB] Kit hash:    6312fa25
+INFO: [rank: 0] Seed set to 0
+INFO:lightning.fabric.utilities.seed: [rank: 0] Seed set to 0
+WARNING:isaaclab_physx.physics.physx_manager: TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+INFO:isaaclab.utils.backend_utils: Registered backend 'physx' for factory FrameView.
+Overriding control info for left_hip_pitch_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for left_hip_roll_joint with .*_hip_roll_joint
+Overriding control info for left_hip_yaw_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for left_knee_joint with .*_knee_joint
+Overriding control info for left_ankle_pitch_joint with .*_ankle_.*
+Overriding control info for left_ankle_roll_joint with .*_ankle_.*
+Overriding control info for right_hip_pitch_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for right_hip_roll_joint with .*_hip_roll_joint
+Overriding control info for right_hip_yaw_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for right_knee_joint with .*_knee_joint
+Overriding control info for right_ankle_pitch_joint with .*_ankle_.*
+Overriding control info for right_ankle_roll_joint with .*_ankle_.*
+Overriding control info for waist_yaw_joint with waist_yaw_joint
+Overriding control info for waist_roll_joint with waist_(roll|pitch)_joint
+Overriding control info for waist_pitch_joint with waist_(roll|pitch)_joint
+Overriding control info for left_shoulder_pitch_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_shoulder_roll_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_shoulder_yaw_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_elbow_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_wrist_roll_joint with .*_wrist_roll_joint
+Overriding control info for left_wrist_pitch_joint with .*_wrist_pitch_joint
+Overriding control info for left_wrist_yaw_joint with .*_wrist_yaw_joint
+Overriding control info for right_shoulder_pitch_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_shoulder_roll_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_shoulder_yaw_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_elbow_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_wrist_roll_joint with .*_wrist_roll_joint
+Overriding control info for right_wrist_pitch_joint with .*_wrist_pitch_joint
+Overriding control info for right_wrist_yaw_joint with .*_wrist_yaw_joint
+{'accelerator': 'gpu', 'devices': 1, 'num_nodes': 1, 'strategy': 'DDPStrategy', 'precision': '32-true', 'loggers': ['TensorBoardLogger'], 'callbacks': []}
+Warp 1.15.0.dev20260626 initialized:
+   CUDA Toolkit 12.9, Driver 13.2
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 2080 Ti" (11 GiB, sm_75, mempool enabled)
+   Kernel cache:
+     /root/.cache/warp/1.15.0.dev20260626
+Setting seed: 0
+Initial heightfield size: 2800x23500 = 65800000 vertices
+Optimizing mesh by merging flat regions...
+Optimized mesh vertex count: 336
+Loading motions from yaml/npy file or Directory of motions which is slower
+course/data/walking/robot.motion
+Loading 1/1 motion files: course/data/walking/robot.motion
+Loaded 1 motions with a total length of 3.233s.
+Creating empty SceneLib (no scenes)
+[INFO]: Registered backend 'physx' for factory FrameView.
+INFO:isaaclab.utils.backend_utils: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory Articulation.
+INFO:isaaclab.utils.backend_utils: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+INFO:isaaclab.scene.interactive_scene: Physics scene prim path: /physicsScene
+[INFO]: Physics scene prim path: /physicsScene
+INFO:isaaclab_physx.assets.articulation.articulation: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                        Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                       |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+| Index | Name                       | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits | Velocity Limits | Effort Limits |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+|   0   | left_hip_pitch_joint       |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   1   | right_hip_pitch_joint      |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   2   | waist_yaw_joint            |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      32.000     |     88.000    |
+|   3   | left_hip_roll_joint        |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.524, 2.967] |      20.000     |    139.000    |
+|   4   | right_hip_roll_joint       |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-2.967, 0.524] |      20.000     |    139.000    |
+|   5   | waist_roll_joint           |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   6   | left_hip_yaw_joint         |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   7   | right_hip_yaw_joint        |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   8   | waist_pitch_joint          |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   9   | left_knee_joint            |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   10  | right_knee_joint           |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   11  | left_shoulder_pitch_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   12  | right_shoulder_pitch_joint |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   13  | left_ankle_pitch_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   14  | right_ankle_pitch_joint    |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   15  | left_shoulder_roll_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.588, 2.252] |      37.000     |     25.000    |
+|   16  | right_shoulder_roll_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.252, 1.588] |      37.000     |     25.000    |
+|   17  | left_ankle_roll_joint      |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   18  | right_ankle_roll_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   19  | left_shoulder_yaw_joint    |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   20  | right_shoulder_yaw_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   21  | left_elbow_joint           |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   22  | right_elbow_joint          |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   23  | left_wrist_roll_joint      |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   24  | right_wrist_roll_joint     |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   25  | left_wrist_pitch_joint     |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   26  | right_wrist_pitch_joint    |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   27  | left_wrist_yaw_joint       |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   28  | right_wrist_yaw_joint      |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+[INFO]: Setup complete...
+Smoothing contact labels with window size 7...
+Contact smoothing complete for 1 motions. Contacts are now float values in [0, 1].
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                        Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                       |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+| Index | Name                       | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits | Velocity Limits | Effort Limits |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+|   0   | left_hip_pitch_joint       |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   1   | right_hip_pitch_joint      |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   2   | waist_yaw_joint            |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      32.000     |     88.000    |
+|   3   | left_hip_roll_joint        |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.524, 2.967] |      20.000     |    139.000    |
+|   4   | right_hip_roll_joint       |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-2.967, 0.524] |      20.000     |    139.000    |
+|   5   | waist_roll_joint           |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   6   | left_hip_yaw_joint         |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   7   | right_hip_yaw_joint        |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   8   | waist_pitch_joint          |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   9   | left_knee_joint            |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   10  | right_knee_joint           |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   11  | left_shoulder_pitch_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   12  | right_shoulder_pitch_joint |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   13  | left_ankle_pitch_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   14  | right_ankle_pitch_joint    |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   15  | left_shoulder_roll_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.588, 2.252] |      37.000     |     25.000    |
+|   16  | right_shoulder_roll_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.252, 1.588] |      37.000     |     25.000    |
+|   17  | left_ankle_roll_joint      |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   18  | right_ankle_roll_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   19  | left_shoulder_yaw_joint    |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   20  | right_shoulder_yaw_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   21  | left_elbow_joint           |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   22  | right_elbow_joint          |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   23  | left_wrist_roll_joint      |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   24  | right_wrist_roll_joint     |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   25  | left_wrist_pitch_joint     |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   26  | right_wrist_pitch_joint    |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   27  | left_wrist_yaw_joint       |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   28  | right_wrist_yaw_joint      |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+INFO:protomotions.agents.base_agent.agent: Materializing lazy modules...
+INFO:__main__: Saving config file to results/m3_clean_control
+INFO:__main__: Saving resolved configs (pickled) to results/m3_clean_control/resolved_configs.pt
+INFO:__main__: Saving resolved configs (YAML) to results/m3_clean_control/resolved_configs.yaml
+INFO:__main__: Copying experiment file to results/m3_clean_control/experiment_config.py
+INFO:protomotions.utils.inference_utils: Applying experiment inference overrides from apply_inference_overrides()
+INFO:__main__: Saving config file to results/m3_clean_control
+INFO:__main__: Saving resolved configs (pickled) to results/m3_clean_control/resolved_configs_inference.pt
+INFO:__main__: Saving resolved configs (YAML) to results/m3_clean_control/resolved_configs_inference.yaml
+INFO:__main__: Copying experiment file to results/m3_clean_control/experiment_config.py
+INFO:protomotions.agents.base_agent.agent: Auto-registered model output keys: ['action', 'mean_action', 'neglogp', 'value']
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Loading model from checkpoint: /work/robotics-course/course/results/m1_control/last.ckpt
+Epoch 0, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:26
+Traceback (most recent call last):
+  File "/work/robotics-course/course/protomotions/train_agent.py", line 1166, in _run_main_reporting_failures
+    main()
+  File "/work/robotics-course/course/protomotions/train_agent.py", line 1039, in main
+    agent.fit()
+  File "/work/robotics-course/course/protomotions/agents/base_agent/agent.py", line 789, in fit
+    training_log_dict = self.optimize_model()
+                        ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/robotics-course/course/protomotions/agents/ppo/agent.py", line 666, in optimize_model
+    training_log_dict = super().optimize_model()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/robotics-course/course/protomotions/agents/base_agent/agent.py", line 1047, in optimize_model
+    dataset = self.process_dataset(self.experience_buffer.make_dict())
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/robotics-course/course/protomotions/agents/utils/data.py", line 94, in make_dict
+    data = {k: swap_and_flatten01(v) for k, v in self.named_buffers()}
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/robotics-course/course/protomotions/agents/utils/data.py", line 41, in swap_and_flatten01
+    return arr.transpose(0, 1).reshape(s[0] * s[1], *s[2:])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.55 GiB. GPU 0 has a total capacity of 10.57 GiB of which 836.06 MiB is free. Process 4030621 has 9.75 GiB memory in use. Of the allocated memory 4.29 GiB is allocated by PyTorch, and 169.74 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/robotics-course/course/course/launch.py", line 135, in <module>
+    main()
+  File "/work/robotics-course/course/course/launch.py", line 131, in main
+    run_bounded(command, root, environment, args.time_limit_minutes)
+  File "/work/robotics-course/course/course/launch.py", line 20, in run_bounded
+    subprocess.run(command, cwd=root, env=environment, check=True, timeout=minutes * 60)
+  File "/root/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/work/robotics-course/IsaacLab/.venv/bin/python', 'protomotions/train_agent.py', '--robot-name', 'g1', '--experiment-path', 'course/module_1_train_no_dr/experiment.py', '--motion-file', 'course/data/walking/robot.motion', '--experiment-name', 'm3_clean_control', '--seed', '0', '--batch-size', '4096', '--training-max-steps', '10000000', '--checkpoint', 'results/m1_control/last.ckpt', '--simulator', 'isaaclab', '--num-envs', '4096', '--headless']' returned non-zero exit status 1.
+=== END m3_clean_control rc=1 2026-10-15_15:08:45
+=== START m3_clean_control 2026-10-15_15:08:49 gpu=2 course=work: python -m course.launch 3 train --experiment-name m3_clean_control --headless --seed 0 --num-envs 2048 --batch-size 2048 --training-max-steps 10000000 --checkpoint results/m1_control/last.ckpt --time-limit-minutes 15
+/work/robotics-course/IsaacLab/.venv/bin/python protomotions/train_agent.py --robot-name g1 --experiment-path course/module_1_train_no_dr/experiment.py --motion-file course/data/walking/robot.motion --experiment-name m3_clean_control --seed 0 --batch-size 2048 --training-max-steps 10000000 --checkpoint results/m1_control/last.ckpt --simulator isaaclab --num-envs 2048 --headless
+INFO:__main__: WARM START: Using checkpoint for initialization: results/m1_control/last.ckpt
+INFO:__main__: WARM_START: Building configs from experiment file
+INFO:__main__: Using original experiment path: course/module_1_train_no_dr/experiment.py
+INFO:__main__: Loading experiment module from: course/module_1_train_no_dr/experiment.py
+INFO:absl: MUJOCO_GL is not set, so an OpenGL backend will be chosen automatically.
+/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/glfw/__init__.py:917: GLFWError: (65550) b'X11: The DISPLAY environment variable is missing'
+  warnings.warn(message, GLFWError)
+INFO:absl: Successfully imported OpenGL backend: glfw
+INFO:absl: MuJoCo library version is: 3.8.0
+<unknown>:4: SyntaxWarning: invalid escape sequence '\*'
+INFO: Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+INFO:lightning.fabric.utilities.distributed: Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+INFO: ----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+INFO:lightning.pytorch.utilities.rank_zero: ----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+INFO:isaaclab.app.app_launcher: No visualizer was selected, so running in headless mode. To launch a visualizer app, pass '--viz <names>' (for example '--viz kit').
+INFO:isaaclab.app.app_launcher: Using device: cuda:0
+INFO:isaaclab.app.app_launcher: Loading experience file: /work/robotics-course/IsaacLab/apps/isaaclab.python.headless.kit
+DEBUG:asyncio: Using selector: EpollSelector
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1792066138.072257      56 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1792066138.072292      56 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Loading user config located at: '/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-10-15T12:08:58Z [0ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-15T12:08:58Z [13ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-10-15T12:08:58Z [112ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderHw.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T12:08:58Z [113ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderGlsl.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T12:08:58Z [116ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libusd_usdBakeMtlx.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+[ISAACLAB] AppLauncher initialization complete
+[ISAACLAB] Kit version: 110.1.1+production.305458.6312fa25.gl
+[ISAACLAB] Kit kernel:  210.1.5+release.12978.b22b555f.gl
+[ISAACLAB] Kit hash:    6312fa25
+INFO: [rank: 0] Seed set to 0
+INFO:lightning.fabric.utilities.seed: [rank: 0] Seed set to 0
+WARNING:isaaclab_physx.physics.physx_manager: TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+INFO:isaaclab.utils.backend_utils: Registered backend 'physx' for factory FrameView.
+Overriding control info for left_hip_pitch_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for left_hip_roll_joint with .*_hip_roll_joint
+Overriding control info for left_hip_yaw_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for left_knee_joint with .*_knee_joint
+Overriding control info for left_ankle_pitch_joint with .*_ankle_.*
+Overriding control info for left_ankle_roll_joint with .*_ankle_.*
+Overriding control info for right_hip_pitch_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for right_hip_roll_joint with .*_hip_roll_joint
+Overriding control info for right_hip_yaw_joint with .*_hip_(pitch|yaw)_joint
+Overriding control info for right_knee_joint with .*_knee_joint
+Overriding control info for right_ankle_pitch_joint with .*_ankle_.*
+Overriding control info for right_ankle_roll_joint with .*_ankle_.*
+Overriding control info for waist_yaw_joint with waist_yaw_joint
+Overriding control info for waist_roll_joint with waist_(roll|pitch)_joint
+Overriding control info for waist_pitch_joint with waist_(roll|pitch)_joint
+Overriding control info for left_shoulder_pitch_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_shoulder_roll_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_shoulder_yaw_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_elbow_joint with .*_(shoulder|elbow)_.*
+Overriding control info for left_wrist_roll_joint with .*_wrist_roll_joint
+Overriding control info for left_wrist_pitch_joint with .*_wrist_pitch_joint
+Overriding control info for left_wrist_yaw_joint with .*_wrist_yaw_joint
+Overriding control info for right_shoulder_pitch_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_shoulder_roll_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_shoulder_yaw_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_elbow_joint with .*_(shoulder|elbow)_.*
+Overriding control info for right_wrist_roll_joint with .*_wrist_roll_joint
+Overriding control info for right_wrist_pitch_joint with .*_wrist_pitch_joint
+Overriding control info for right_wrist_yaw_joint with .*_wrist_yaw_joint
+{'accelerator': 'gpu', 'devices': 1, 'num_nodes': 1, 'strategy': 'DDPStrategy', 'precision': '32-true', 'loggers': ['TensorBoardLogger'], 'callbacks': []}
+Warp 1.15.0.dev20260626 initialized:
+   CUDA Toolkit 12.9, Driver 13.2
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 2080 Ti" (11 GiB, sm_75, mempool enabled)
+   Kernel cache:
+     /root/.cache/warp/1.15.0.dev20260626
+Setting seed: 0
+Initial heightfield size: 2800x13300 = 37240000 vertices
+Optimizing mesh by merging flat regions...
+Optimized mesh vertex count: 196
+Loading motions from yaml/npy file or Directory of motions which is slower
+course/data/walking/robot.motion
+Loading 1/1 motion files: course/data/walking/robot.motion
+Loaded 1 motions with a total length of 3.233s.
+Creating empty SceneLib (no scenes)
+[INFO]: Registered backend 'physx' for factory FrameView.
+INFO:isaaclab.utils.backend_utils: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory Articulation.
+INFO:isaaclab.utils.backend_utils: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+INFO:isaaclab.scene.interactive_scene: Physics scene prim path: /physicsScene
+[INFO]: Physics scene prim path: /physicsScene
+INFO:isaaclab_physx.assets.articulation.articulation: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                        Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                       |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+| Index | Name                       | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits | Velocity Limits | Effort Limits |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+|   0   | left_hip_pitch_joint       |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   1   | right_hip_pitch_joint      |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   2   | waist_yaw_joint            |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      32.000     |     88.000    |
+|   3   | left_hip_roll_joint        |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.524, 2.967] |      20.000     |    139.000    |
+|   4   | right_hip_roll_joint       |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-2.967, 0.524] |      20.000     |    139.000    |
+|   5   | waist_roll_joint           |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   6   | left_hip_yaw_joint         |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   7   | right_hip_yaw_joint        |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   8   | waist_pitch_joint          |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   9   | left_knee_joint            |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   10  | right_knee_joint           |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   11  | left_shoulder_pitch_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   12  | right_shoulder_pitch_joint |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   13  | left_ankle_pitch_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   14  | right_ankle_pitch_joint    |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   15  | left_shoulder_roll_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.588, 2.252] |      37.000     |     25.000    |
+|   16  | right_shoulder_roll_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.252, 1.588] |      37.000     |     25.000    |
+|   17  | left_ankle_roll_joint      |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   18  | right_ankle_roll_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   19  | left_shoulder_yaw_joint    |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   20  | right_shoulder_yaw_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   21  | left_elbow_joint           |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   22  | right_elbow_joint          |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   23  | left_wrist_roll_joint      |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   24  | right_wrist_roll_joint     |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   25  | left_wrist_pitch_joint     |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   26  | right_wrist_pitch_joint    |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   27  | left_wrist_yaw_joint       |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   28  | right_wrist_yaw_joint      |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+[INFO]: Setup complete...
+Smoothing contact labels with window size 7...
+Contact smoothing complete for 1 motions. Contacts are now float values in [0, 1].
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                        Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                       |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+| Index | Name                       | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits | Velocity Limits | Effort Limits |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+|   0   | left_hip_pitch_joint       |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   1   | right_hip_pitch_joint      |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   2   | waist_yaw_joint            |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      32.000     |     88.000    |
+|   3   | left_hip_roll_joint        |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.524, 2.967] |      20.000     |    139.000    |
+|   4   | right_hip_roll_joint       |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-2.967, 0.524] |      20.000     |    139.000    |
+|   5   | waist_roll_joint           |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   6   | left_hip_yaw_joint         |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   7   | right_hip_yaw_joint        |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   8   | waist_pitch_joint          |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   9   | left_knee_joint            |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   10  | right_knee_joint           |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   11  | left_shoulder_pitch_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   12  | right_shoulder_pitch_joint |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   13  | left_ankle_pitch_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   14  | right_ankle_pitch_joint    |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   15  | left_shoulder_roll_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.588, 2.252] |      37.000     |     25.000    |
+|   16  | right_shoulder_roll_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.252, 1.588] |      37.000     |     25.000    |
+|   17  | left_ankle_roll_joint      |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   18  | right_ankle_roll_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   19  | left_shoulder_yaw_joint    |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   20  | right_shoulder_yaw_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   21  | left_elbow_joint           |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   22  | right_elbow_joint          |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   23  | left_wrist_roll_joint      |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   24  | right_wrist_roll_joint     |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   25  | left_wrist_pitch_joint     |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   26  | right_wrist_pitch_joint    |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   27  | left_wrist_yaw_joint       |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   28  | right_wrist_yaw_joint      |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+INFO:protomotions.agents.base_agent.agent: Materializing lazy modules...
+INFO:__main__: Saving config file to results/m3_clean_control
+INFO:__main__: Saving resolved configs (pickled) to results/m3_clean_control/resolved_configs.pt
+INFO:__main__: Saving resolved configs (YAML) to results/m3_clean_control/resolved_configs.yaml
+INFO:__main__: Copying experiment file to results/m3_clean_control/experiment_config.py
+INFO:protomotions.utils.inference_utils: Applying experiment inference overrides from apply_inference_overrides()
+INFO:__main__: Saving config file to results/m3_clean_control
+INFO:__main__: Saving resolved configs (pickled) to results/m3_clean_control/resolved_configs_inference.pt
+INFO:__main__: Saving resolved configs (YAML) to results/m3_clean_control/resolved_configs_inference.yaml
+INFO:__main__: Copying experiment file to results/m3_clean_control/experiment_config.py
+INFO:protomotions.agents.base_agent.agent: Auto-registered model output keys: ['action', 'mean_action', 'neglogp', 'value']
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Loading model from checkpoint: /work/robotics-course/course/results/m1_control/last.ckpt
+Epoch 0, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:25
+/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/torch/autograd/graph.py:869: UserWarning: The AccumulateGrad node's stream does not match the stream of the node that produced the incoming gradient. This may incur unnecessary synchronization and break CUDA graph capture if the AccumulateGrad node's stream is the default stream. This mismatch is caused by an AccumulateGrad node created prior to the current iteration being kept alive. This can happen if the autograd graph is still being kept alive by tensors such as the loss, or if you are using DDP, which will stash a reference to the node. To resolve the mismatch, delete all references to the autograd graph or ensure that DDP initialization is performed under the same stream as subsequent forwards. If the mismatch is intentional, you can use torch.autograd.graph.set_warn_on_accumulate_grad_stream_mismatch(False) to suppress this warning. (Triggered internally at /pytorch/torch/csrc/autograd/input_buffer.cpp:240.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Epoch 0, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+INFO:protomotions.agents.base_agent.agent: New best performing controller found with score 1.0. Model saved to results/m3_clean_control/score_based.ckpt
+Evaluating motions 0 to 1, out of total 1
+Saving to: results/m3_clean_control/failed_motions/failed_motions_epoch_1_rank_0.txt
+Top 1 weights:
+Indices: tensor([0], device='cuda:0')
+Values: tensor([1.], device='cuda:0')
+Smoothness metric: normalized_jerk_mean, value: 775.390380859375
+Smoothness metric: high_jerk_frame_percentage_mean, value: 25.35211145877838
+Action smoothness: mean_delta=0.0136 rad (0.78°), max_delta=0.0501 rad (2.87°)
+Predicted MotionLib saved to results/m3_clean_control/results/predicted_motion_lib_epoch_1.pt
+Epoch 1, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 2, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 2, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 3, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 3, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 4, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 4, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 5, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 5, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 6, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 6, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 7, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 7, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 8, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 8, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 9, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 9, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 10, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 10, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 11, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 11, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 12, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 12, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 13, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 13, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 14, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 14, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 15, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 15, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 16, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 16, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 17, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 17, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 18, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 18, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 19, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 19, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 20, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 20, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 21, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 21, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 22, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 22, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 23, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 23, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 24, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 24, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 25, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 25, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 26, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 26, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 27, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 27, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 28, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 28, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 29, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 29, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 30, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 30, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 31, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 31, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 32, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 32, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 33, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 33, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 34, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 34, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 35, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 35, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 36, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 36, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 37, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 37, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 38, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 38, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 39, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 39, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 40, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 40, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 41, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 41, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 42, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 42, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 43, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 43, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 44, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 44, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 45, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 45, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 46, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 46, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 47, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 47, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 48, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 48, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 49, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 49, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 50, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 50, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 51, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 51, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 52, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 52, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 53, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 53, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 54, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 54, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 55, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 55, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 56, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 56, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 57, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 57, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 58, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 58, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 59, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 59, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 60, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 60, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 61, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 61, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 62, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 62, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 63, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 63, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 64, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 64, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 65, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 65, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 66, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 66, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 67, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 67, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 68, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 68, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 69, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 69, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 70, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 70, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 71, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 71, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 72, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 72, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 73, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 73, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 74, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 74, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 75, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 75, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 76, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 76, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 77, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 77, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 78, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 78, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 79, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 79, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 80, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 80, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 81, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 81, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Epoch 82, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 82, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 83, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 83, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 84, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 84, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 85, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 85, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 86, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 86, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 87, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 87, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 88, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 88, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 89, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 89, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 90, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 90, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Epoch 91, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 91, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Epoch 92, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 92, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 93, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 93, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 94, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 94, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 95, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 95, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 96, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 96, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 97, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 97, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 98, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:05
+Epoch 98, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 99, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:06
+Epoch 99, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+INFO:protomotions.agents.base_agent.agent: Saved env checkpoint: results/m3_clean_control/env_robot.motion.ckpt, rank 0
+INFO:protomotions.agents.base_agent.agent: Saved checkpoint: results/m3_clean_control/last.ckpt
+Epoch 100, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 100, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 101, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 101, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 102, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 102, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Epoch 103, collecting data... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:07
+Epoch 103, training... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Course run reached its 15-minute wall-clock limit. Use the last saved checkpoint for diagnosis; completion and learning are not established.
+=== END m3_clean_control rc=124 2026-10-15_15:23:50

@@ -1,0 +1,47 @@
+# Exercises with their own git history; each is a branch of this repo (see README)
+/toy-ppo/
+/rl-for-real/
+/rl-sentiment-exercise/
+/Miniconda3-latest-Linux-x86_64.sh
+__pycache__/
+*.pyc
+
+# Robotics: the instructor bundle (framework, assets, checkpoints) stays local; only our own files are tracked
+/robotics_rl_course_students/*
+!/robotics_rl_course_students/course/
+/robotics_rl_course_students/course/*
+!/robotics_rl_course_students/course/module_0_hello_world/
+!/robotics_rl_course_students/course/module_1_train_no_dr/
+!/robotics_rl_course_students/course/module_2_behavior_cloning/
+/robotics_rl_course_students/course/module_*/*
+!/robotics_rl_course_students/course/module_0_hello_world/exercises.py
+!/robotics_rl_course_students/course/module_1_train_no_dr/experiment.py
+!/robotics_rl_course_students/course/module_2_behavior_cloning/collect_data.py
+!/robotics_rl_course_students/course/module_2_behavior_cloning/train_bc.py
+!/robotics_rl_course_students/results/
+!/robotics_rl_course_students/claude_run/
+/robotics_rl_course_students/claude_run/work_dr/
+/robotics_rl_course_students/claude_run/videos/
+/robotics_rl_course_students/claude_run/work/*
+!/robotics_rl_course_students/claude_run/work/*.py
+!/robotics_rl_course_students/claude_run/work/bc_policy.pt
+!/robotics_rl_course_students/claude_run/work/results/
+!/robotics_rl_course_students/claude_run/work/course/
+/robotics_rl_course_students/claude_run/work/course/*
+!/robotics_rl_course_students/claude_run/work/course/module_0_hello_world/
+!/robotics_rl_course_students/claude_run/work/course/module_1_train_no_dr/
+!/robotics_rl_course_students/claude_run/work/course/module_2_behavior_cloning/
+/robotics_rl_course_students/claude_run/work/course/module_*/*
+!/robotics_rl_course_students/claude_run/work/course/module_0_hello_world/exercises.py
+!/robotics_rl_course_students/claude_run/work/course/module_1_train_no_dr/experiment.py
+!/robotics_rl_course_students/claude_run/work/course/module_2_behavior_cloning/collect_data.py
+!/robotics_rl_course_students/claude_run/work/course/module_2_behavior_cloning/train_bc.py
+# inside results: keep reports, drop checkpoints / training dirs / motion copies
+*.ckpt
+*.motion
+lightning_logs/
+/robotics_rl_course_students/claude_run/work/results/*/results/
+/robotics_rl_course_students/claude_run/work/results/*/failed_motions/
+/robotics_rl_course_students/claude_run/work/results/*/*.pt
+/robotics_rl_course_students/results/*/*.pt
+/robotics_rl_course_students/claude_run/work/setup.py

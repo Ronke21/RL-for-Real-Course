@@ -1,0 +1,24 @@
+14:23:37 [gpu0] lane C start
+14:23:37 [gpu0] start m0_random_before
+14:24:39 [gpu0] end m0_random_before rc=0
+14:24:39 [gpu0] start m0_random_after
+14:25:37 [gpu0] end m0_random_after rc=0
+14:25:37 [gpu0] start m0_compare
+14:34:47 [gpu0] end m0_compare rc=0
+14:34:47 [gpu0] waiting for lane A's m1_control.json
+15:05:47 [gpu0] M3 start: results/m1_control/last.ckpt
+15:06:47 [gpu0] start m3_check_wiring
+15:07:19 [gpu0] end m3_check_wiring rc=0
+15:07:19 [gpu0] start m3_g1
+15:10:26 [gpu0] end m3_g1 rc=1
+15:10:26 [gpu0] m3_g1 OOM at 4096 envs; retrying smaller
+15:10:26 [gpu0] start m3_g1
+15:25:28 [gpu0] end m3_g1 rc=124
+15:25:28 [gpu0] start m3_after_clean
+15:27:25 [gpu0] end m3_after_clean rc=0
+15:27:25 [gpu0] start m3_after_perturbed
+15:30:27 [gpu0] end m3_after_perturbed rc=0
+15:30:28 [gpu0] start metatron
+15:37:59 [gpu0] end metatron rc=0
+15:37:59 [gpu0] lane C ALL DONE
+timeout: the monitored command dumped core

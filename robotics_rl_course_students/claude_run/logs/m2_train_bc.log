@@ -1,0 +1,24 @@
+=== START m2_train_bc 2026-10-15_14:31:03 gpu=1 course=work: python -m course.module_2_behavior_cloning.train_bc --data bc_data.pt --epochs 30 --output bc_policy.pt
+<unknown>:4: SyntaxWarning: invalid escape sequence '\*'
+INFO:absl:MUJOCO_GL is not set, so an OpenGL backend will be chosen automatically.
+/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/glfw/__init__.py:917: GLFWError: (65550) b'X11: The DISPLAY environment variable is missing'
+  warnings.warn(message, GLFWError)
+INFO:absl:Successfully imported OpenGL backend: glfw
+INFO:absl:MuJoCo library version is: 3.8.0
+==================================================
+MODULE 2: Training Behavior Cloning Policy
+==================================================
+
+Loading dataset from bc_data.pt...
+  Samples:    16000
+  Action dim: 29
+  Obs keys:   ['noisy_reduced_coords_obs', 'noisy_mimic_reduced_coords_target_poses', 'historical_previous_processed_actions']
+  Parameters: 228,637
+Constant-action validation MSE: 0.008567
+
+Training for 30 epochs (batch_size=256, lr=0.001)...
+
+  Training ━━━━━━ 30/30 epochs 0:00:02 0:00:… train=0.000005 validation=0.000006
+
+Model saved to bc_policy.pt
+=== END m2_train_bc rc=0 2026-10-15_14:31:14

@@ -1,0 +1,7 @@
+motions:
+- file: broken_random/heading0.motion
+  weight: 1.0
+- file: broken_random/heading90.motion
+  weight: 1.0
+- file: broken_random/heading180.motion
+  weight: 1.0

@@ -1,0 +1,7 @@
+motions:
+- file: student_random/heading0.motion
+  weight: 1.0
+- file: student_random/heading90.motion
+  weight: 1.0
+- file: student_random/heading180.motion
+  weight: 1.0

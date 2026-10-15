@@ -1,0 +1,23 @@
+/work/robotics-course/course/protomotions/utils/rotations.py:199: SyntaxWarning: invalid escape sequence '\*'
+  Combine two set of 3D rotations together using \**\* operator. The shape needs to be
+<unknown>:4: SyntaxWarning: invalid escape sequence '\*'
+/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/glfw/__init__.py:917: GLFWError: (65550) b'X11: The DISPLAY environment variable is missing'
+  warnings.warn(message, GLFWError)
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+[rank: 0] Seed set to 0
+DEBUG:asyncio:Using selector: EpollSelector
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1792063963.146024      54 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1792063963.146067      54 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Loading user config located at: '/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-10-15T11:32:43Z [0ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-15T11:32:43Z [34ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-10-15T11:32:43Z [106ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderHw.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T11:32:43Z [107ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderGlsl.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T11:32:43Z [110ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libusd_usdBakeMtlx.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+Warning: in Tf_PyPostProcessModule at line 376 of /builds/omniverse/usd-ci/conan/src/0.25.11.kit.2/pxr/base/tf/pyModule.cpp -- Error occurred postprocessing module pxr.PhysxSchema._physxSchema!

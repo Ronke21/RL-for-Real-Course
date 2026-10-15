@@ -1,0 +1,21 @@
+=== START smoke_walk 2026-10-15_14:06:28: python -m course.module_0_hello_world.walk_forward --headless --episodes 16
+time="2026-10-15T14:06:28+03:00" level=error msg="cannot find UID/GID for user ronke21: no subuid ranges found for user \"ronke21\" in /etc/subuid - check rootless mode in man pages."
+time="2026-10-15T14:06:28+03:00" level=warning msg="Using rootless single mapping into the namespace. This might break some images. Check /etc/subuid and /etc/subgid for adding sub*ids if not using a network user"
+results/m0_frames/broken_heading0.json
+{
+  "episode_count": 16,
+  "successes": 16,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.8063923194655637,
+    1.0
+  ],
+  "mean_error_before_failure": 0.07446892466396093,
+  "max_error_before_failure": 0.11826343834400177,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+=== END smoke_walk rc=0 2026-10-15_14:10:29

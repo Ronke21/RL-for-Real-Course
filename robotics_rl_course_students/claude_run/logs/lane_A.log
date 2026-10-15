@@ -1,0 +1,26 @@
+14:25:20 [gpu2] lane A start
+14:25:20 [gpu2] start m1_baseline
+14:26:33 [gpu2] end m1_baseline rc=0
+14:26:33 [gpu2] start m1_control
+14:32:36 [gpu2] end m1_control rc=1
+14:32:36 [gpu2] m1_control OOM at 4096 envs; retrying smaller
+14:32:36 [gpu2] start m1_control
+15:03:53 [gpu2] end m1_control rc=124
+15:03:53 [gpu2] start m1_control_eval
+15:05:46 [gpu2] end m1_control_eval rc=0
+15:05:46 [gpu2] M3 start: results/m1_control/last.ckpt
+15:05:46 [gpu2] start m3_clean_control
+15:08:45 [gpu2] end m3_clean_control rc=1
+15:08:45 [gpu2] m3_clean_control OOM at 4096 envs; retrying smaller
+15:08:45 [gpu2] start m3_clean_control
+15:23:50 [gpu2] end m3_clean_control rc=124
+15:23:50 [gpu2] start m3_cleanctl_clean
+15:25:46 [gpu2] end m3_cleanctl_clean rc=0
+15:25:46 [gpu2] start m3_cleanctl_perturbed
+15:29:06 [gpu2] end m3_cleanctl_perturbed rc=0
+15:29:06 [gpu2] start m3_before_clean
+15:31:52 [gpu2] end m3_before_clean rc=0
+15:31:52 [gpu2] start m3_before_perturbed
+15:35:08 [gpu2] end m3_before_perturbed rc=0
+15:35:09 [gpu2] lane A ALL DONE
+timeout: the monitored command dumped core

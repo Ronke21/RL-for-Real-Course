@@ -1,0 +1,104 @@
+=== START m0_compare 2026-10-15_14:28:03 gpu=0 course=work: python -m course.module_0_hello_world.run_frames --compare --num-envs 128
+results/m0_frames/broken_heading0.json
+{
+  "episode_count": 500,
+  "successes": 500,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.9923756595384479,
+    1.0
+  ],
+  "mean_error_before_failure": 0.07385112799704074,
+  "max_error_before_failure": 0.1202826052904129,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+results/m0_frames/student_heading0.json
+{
+  "episode_count": 500,
+  "successes": 500,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.9923756595384479,
+    1.0
+  ],
+  "mean_error_before_failure": 0.0688690104931593,
+  "max_error_before_failure": 0.10968254506587982,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+results/m0_frames/broken_heading90.json
+{
+  "episode_count": 500,
+  "successes": 0,
+  "failures": 500,
+  "censored": 0,
+  "survival_success_rate": 0.0,
+  "survival_wilson_95_interval": [
+    4.336808689942018e-19,
+    0.007624340461552241
+  ],
+  "mean_error_before_failure": 0.13649295380711554,
+  "max_error_before_failure": 0.3516366183757782,
+  "mean_survival_steps": 43.07,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+results/m0_frames/student_heading90.json
+{
+  "episode_count": 500,
+  "successes": 500,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.9923756595384479,
+    1.0
+  ],
+  "mean_error_before_failure": 0.06887793762981892,
+  "max_error_before_failure": 0.10968206822872162,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+results/m0_frames/broken_heading180.json
+{
+  "episode_count": 500,
+  "successes": 0,
+  "failures": 500,
+  "censored": 0,
+  "survival_success_rate": 0.0,
+  "survival_wilson_95_interval": [
+    4.336808689942018e-19,
+    0.007624340461552241
+  ],
+  "mean_error_before_failure": 0.15600477543473243,
+  "max_error_before_failure": 0.42130258679389954,
+  "mean_survival_steps": 34.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+results/m0_frames/student_heading180.json
+{
+  "episode_count": 500,
+  "successes": 500,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.9923756595384479,
+    1.0
+  ],
+  "mean_error_before_failure": 0.06886573386192321,
+  "max_error_before_failure": 0.10965139418840408,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+=== END m0_compare rc=0 2026-10-15_14:34:47

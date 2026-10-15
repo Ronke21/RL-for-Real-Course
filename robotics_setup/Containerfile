@@ -1,0 +1,7 @@
+FROM docker.io/library/ubuntu:24.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN echo "APT::Sandbox::User \"root\";" > /etc/apt/apt.conf.d/99nosandbox && apt-get update && apt-get install -y --no-install-recommends git build-essential libgl1 libglib2.0-0 \
+      libglu1-mesa libxrender1 libxi6 libxrandr2 libxinerama1 libxcursor1 libsm6 libice6 libegl1 libvulkan1 \
+      ca-certificates curl \
+ && rm -rf /var/lib/apt/lists/*
+RUN curl -LsSf https://astral.sh/uv/0.13.0/install.sh | env UV_INSTALL_DIR=/usr/local/bin sh && uv --version

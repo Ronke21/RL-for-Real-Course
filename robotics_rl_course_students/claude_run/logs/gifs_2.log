@@ -1,0 +1,8 @@
+15:36:27 [gpu2] start rec_m2_bc
+15:37:34 [gpu2] end rec_m2_bc rc=0
+15:37:34 [gpu2] start rec_m3_before
+15:39:39 [gpu2] end rec_m3_before rc=0
+15:39:39 [gpu2] start rec_m3_after
+15:41:51 [gpu2] end rec_m3_after rc=0
+15:41:51 [gpu2] gifs lane 2 ALL DONE
+timeout: the monitored command dumped core

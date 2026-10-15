@@ -1,0 +1,31 @@
+14:25:20 [gpu1] lane B start
+14:25:20 [gpu1] start m2_collect
+14:28:44 [gpu1] end m2_collect rc=0
+14:28:44 [gpu1] start m2_train_bc
+14:31:14 [gpu1] end m2_train_bc rc=0
+14:31:14 [gpu1] start m2_test_bc
+14:32:21 [gpu1] end m2_test_bc rc=0
+14:32:21 [gpu1] start m2_expert_clean
+14:34:14 [gpu1] end m2_expert_clean rc=0
+14:34:14 [gpu1] start m2_bc_clean
+14:37:10 [gpu1] end m2_bc_clean rc=0
+14:37:10 [gpu1] start m2_expert_perturbed
+14:39:11 [gpu1] end m2_expert_perturbed rc=0
+14:39:11 [gpu1] start m2_bc_perturbed
+14:41:05 [gpu1] end m2_bc_perturbed rc=0
+14:41:05 [gpu1] start m1_reward_control
+14:44:23 [gpu1] end m1_reward_control rc=1
+14:44:23 [gpu1] m1_reward_control OOM at 4096 envs; retrying smaller
+14:44:23 [gpu1] start m1_reward_control
+14:50:03 [gpu1] end m1_reward_control rc=0
+14:50:03 [gpu1] start m1_reward_control_eval
+14:51:57 [gpu1] end m1_reward_control_eval rc=0
+14:51:57 [gpu1] start m1_ablation
+14:55:11 [gpu1] end m1_ablation rc=1
+14:55:11 [gpu1] m1_ablation OOM at 4096 envs; retrying smaller
+14:55:11 [gpu1] start m1_ablation
+15:01:27 [gpu1] end m1_ablation rc=0
+15:01:27 [gpu1] start m1_ablation_eval
+15:03:20 [gpu1] end m1_ablation_eval rc=0
+15:03:20 [gpu1] lane B ALL DONE
+timeout: the monitored command dumped core

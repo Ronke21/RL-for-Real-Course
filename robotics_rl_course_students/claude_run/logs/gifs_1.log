@@ -1,0 +1,8 @@
+15:36:27 [gpu1] start rec_m1_weak
+15:38:32 [gpu1] end rec_m1_weak rc=0
+15:38:32 [gpu1] start rec_m1_control
+15:40:45 [gpu1] end rec_m1_control rc=0
+15:40:45 [gpu1] start rec_m2_expert
+15:42:57 [gpu1] end rec_m2_expert rc=0
+15:42:57 [gpu1] gifs lane 1 ALL DONE
+timeout: the monitored command dumped core

@@ -1,0 +1,20 @@
+=== START m0_random_after 2026-10-15_14:15:26: python -m course.module_0_hello_world.random_headings --output-dir results/m0_after
+=== START m0_random_after 2026-10-15_14:24:39 gpu=0 course=work: python -m course.module_0_hello_world.random_headings --headless --num-envs 16 --output-dir results/m0_after
+results/m0_after/student_random.json
+{
+  "episode_count": 16,
+  "successes": 16,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.8063923194655637,
+    1.0
+  ],
+  "mean_error_before_failure": 0.06886526476591825,
+  "max_error_before_failure": 0.10911904275417328,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+=== END m0_random_after rc=0 2026-10-15_14:25:37

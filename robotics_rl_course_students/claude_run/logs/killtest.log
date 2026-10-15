@@ -1,0 +1,2 @@
+=== START killtest 2026-10-15_14:22:43 gpu=1 course=work: python -c import time; time.sleep(120)
+=== END killtest rc=killed 2026-10-15_14:23:18

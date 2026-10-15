@@ -1,0 +1,128 @@
+<unknown>:4: SyntaxWarning: invalid escape sequence '\*'
+/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/glfw/__init__.py:917: GLFWError: (65550) b'X11: The DISPLAY environment variable is missing'
+  warnings.warn(message, GLFWError)
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+[rank: 0] Seed set to 0
+DEBUG:asyncio:Using selector: EpollSelector
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1792064363.907437      54 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1792064363.907485      54 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Loading user config located at: '/work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-10-15T11:39:24Z [0ms] [Warning] [omni.usd_config.extension] Enable omni.materialx.libs extension to use MaterialX
+2026-10-15T11:39:24Z [47ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-10-15T11:39:24Z [118ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderHw.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T11:39:24Z [119ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libMaterialXRenderGlsl.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+2026-10-15T11:39:24Z [122ms] [Error] [omni.ext.plugin] Could not load the dynamic library from /work/robotics-course/IsaacLab/.venv/lib/python3.12/site-packages/isaacsim/extscache/omni.usd.libs-1.0.3+6312fa25.lx64.r.cp312/bin/libusd_usdBakeMtlx.so. Error: libXt.so.6: cannot open shared object file: No such file or directory (note that this may be caused by a dependent library)
+[ISAACLAB] AppLauncher initialization complete
+[ISAACLAB] Kit version: 110.1.1+production.305458.6312fa25.gl
+[ISAACLAB] Kit kernel:  210.1.5+release.12978.b22b555f.gl
+[ISAACLAB] Kit hash:    6312fa25
+WARNING:isaaclab_physx.physics.physx_manager:TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+Warp 1.15.0.dev20260626 initialized:
+   CUDA Toolkit 12.9, Driver 13.2
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 2080 Ti" (11 GiB, sm_75, mempool enabled)
+   Kernel cache:
+     /root/.cache/warp/1.15.0.dev20260626
+Initial heightfield size: 2800x3100 = 8680000 vertices
+Optimizing mesh by merging flat regions...
+Optimized mesh vertex count: 56
+Loading motions from yaml/npy file or Directory of motions which is slower
+/work/robotics-course/course/results/m0_frames/broken_heading0.motion
+Loading 1/1 motion files: /work/robotics-course/course/results/m0_frames/broken_heading0.motion
+Loaded 1 motions with a total length of 3.233s.
+Creating empty SceneLib (no scenes)
+[INFO]: Registered backend 'physx' for factory FrameView.
+[INFO]: Registered backend 'physx' for factory RigidObject.
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory ContactSensor.
+[INFO]: Physics scene prim path: /physicsScene
+[INFO]: Setup complete...
+Smoothing contact labels with window size 7...
+Contact smoothing complete for 1 motions. Contacts are now float values in [0, 1].
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                        Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                       |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+| Index | Name                       | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits | Velocity Limits | Effort Limits |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+|   0   | left_hip_pitch_joint       |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   1   | right_hip_pitch_joint      |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.531, 2.880] |      32.000     |     88.000    |
+|   2   | waist_yaw_joint            |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      32.000     |     88.000    |
+|   3   | left_hip_roll_joint        |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.524, 2.967] |      20.000     |    139.000    |
+|   4   | right_hip_roll_joint       |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-2.967, 0.524] |      20.000     |    139.000    |
+|   5   | waist_roll_joint           |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   6   | left_hip_yaw_joint         |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   7   | right_hip_yaw_joint        |   40.179  |  2.558  |  0.010   |      0.100      |      0.000       |      0.000       | [-2.758, 2.758] |      32.000     |     88.000    |
+|   8   | waist_pitch_joint          |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.520, 0.520] |      37.000     |     50.000    |
+|   9   | left_knee_joint            |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   10  | right_knee_joint           |   99.098  |  6.309  |  0.025   |      0.100      |      0.000       |      0.000       | [-0.087, 2.880] |      20.000     |    139.000    |
+|   11  | left_shoulder_pitch_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   12  | right_shoulder_pitch_joint |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-3.089, 2.670] |      37.000     |     25.000    |
+|   13  | left_ankle_pitch_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   14  | right_ankle_pitch_joint    |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.873, 0.524] |      37.000     |     50.000    |
+|   15  | left_shoulder_roll_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.588, 2.252] |      37.000     |     25.000    |
+|   16  | right_shoulder_roll_joint  |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.252, 1.588] |      37.000     |     25.000    |
+|   17  | left_ankle_roll_joint      |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   18  | right_ankle_roll_joint     |   28.501  |  1.814  |  0.007   |      0.100      |      0.000       |      0.000       | [-0.262, 0.262] |      37.000     |     50.000    |
+|   19  | left_shoulder_yaw_joint    |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   20  | right_shoulder_yaw_joint   |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-2.618, 2.618] |      37.000     |     25.000    |
+|   21  | left_elbow_joint           |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   22  | right_elbow_joint          |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.047, 2.094] |      37.000     |     25.000    |
+|   23  | left_wrist_roll_joint      |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   24  | right_wrist_roll_joint     |   14.251  |  0.907  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.972, 1.972] |      37.000     |     25.000    |
+|   25  | left_wrist_pitch_joint     |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   26  | right_wrist_pitch_joint    |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   27  | left_wrist_yaw_joint       |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
+|   28  | right_wrist_yaw_joint      |   16.778  |  1.068  |  0.004   |      0.100      |      0.000       |      0.000       | [-1.614, 1.614] |      22.000     |     5.000     |
++-------+----------------------------+-----------+---------+----------+-----------------+------------------+------------------+-----------------+-----------------+---------------+
+[rank: 0] Seed set to 0
+[rank: 0] Seed set to 1
+[rank: 0] Seed set to 2
+[rank: 0] Seed set to 3
+[rank: 0] Seed set to 4
+[rank: 0] Seed set to 5
+[rank: 0] Seed set to 6
+[rank: 0] Seed set to 7
+[rank: 0] Seed set to 8
+[rank: 0] Seed set to 9
+[rank: 0] Seed set to 10
+[rank: 0] Seed set to 11
+[rank: 0] Seed set to 12
+[rank: 0] Seed set to 13
+[rank: 0] Seed set to 14
+[rank: 0] Seed set to 15
+Loading model from checkpoint: /work/robotics-course/course/course/pretrained/m0/last.ckpt
+{
+  "episode_count": 16,
+  "successes": 16,
+  "failures": 0,
+  "censored": 0,
+  "survival_success_rate": 1.0,
+  "survival_wilson_95_interval": [
+    0.8063923194655637,
+    1.0
+  ],
+  "mean_error_before_failure": 0.07446892466396093,
+  "max_error_before_failure": 0.11826343834400177,
+  "mean_survival_steps": 161.0,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+2026-10-15T11:39:25Z [906ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-10-15T11:39:25Z [906ms] [Warning] [isaacsim.core.simulation_manager.plugin] USD stage is not available; stage-opened subscription is deferred
+2026-10-15T11:39:28Z [4,698ms] [Warning] [isaaclab_physx.physics.physx_manager] TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+2026-10-15T11:39:30Z [6,133ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/Geometry/pelvis/head has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-10-15T11:39:30Z [6,134ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/Geometry/pelvis/waist_yaw_link/waist_roll_link/torso_link/left_shoulder_pitch_link/left_shoulder_roll_link/left_shoulder_yaw_link/left_elbow_link/left_wrist_roll_link/left_wrist_pitch_link/left_wrist_yaw_link/left_rubber_hand has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-10-15T11:39:30Z [6,135ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/Geometry/pelvis/waist_yaw_link/waist_roll_link/torso_link/right_shoulder_pitch_link/right_shoulder_roll_link/right_shoulder_yaw_link/right_elbow_link/right_wrist_roll_link/right_wrist_pitch_link/right_wrist_yaw_link/right_rubber_hand has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-10-15T11:39:31Z [6,990ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/Geometry/pelvis/head has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-10-15T11:39:31Z [6,992ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/Geometry/pelvis/waist_yaw_link/waist_roll_link/torso_link/left_shoulder_pitch_link/left_shoulder_roll_link/left_shoulder_yaw_link/left_elbow_link/left_wrist_roll_link/left_wrist_pitch_link/left_wrist_yaw_link/left_rubber_hand has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-10-15T11:39:31Z [6,992ms] [Warning] [omni.physx.plugin] The rigid body at /World/envs/env_0/Robot/Geometry/pelvis/waist_yaw_link/waist_roll_link/torso_link/right_shoulder_pitch_link/right_shoulder_roll_link/right_shoulder_yaw_link/right_elbow_link/right_wrist_roll_link/right_wrist_pitch_link/right_wrist_yaw_link/right_rubber_hand has a possibly invalid inertia tensor of {1.0, 1.0, 1.0} and a negative mass, small sphere approximated inertia was used. Either specify correct values in the mass properties, or add collider(s) to any shape(s) that you wish to automatically compute mass properties for.
+2026-10-15T11:39:31Z [6,993ms] [Warning] [usdrt.population.plugin] Last global time was not created. Did you call setEnableUsdNoticeHandling?
+2026-10-15T11:39:31Z [7,047ms] [Warning] [omni.physx.tensors.plugin] Failed to find articulation at '/World/envs/env_0/Robot/Geometry/pelvis/pelvis'

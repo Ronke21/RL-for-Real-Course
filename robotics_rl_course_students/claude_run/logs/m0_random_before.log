@@ -1,0 +1,19 @@
+=== START m0_random_before 2026-10-15_14:23:37 gpu=0 course=work: python -m course.module_0_hello_world.run_frames --random-headings --variant broken --headless --num-envs 16 --output-dir results/m0_before
+results/m0_before/broken_random.json
+{
+  "episode_count": 16,
+  "successes": 6,
+  "failures": 10,
+  "censored": 0,
+  "survival_success_rate": 0.375,
+  "survival_wilson_95_interval": [
+    0.18481232558863633,
+    0.6135895945449727
+  ],
+  "mean_error_before_failure": 0.12041066400706768,
+  "max_error_before_failure": 0.4175899028778076,
+  "mean_survival_steps": 83.875,
+  "all_episode_outcomes_observed": true,
+  "uncertainty_scope": "rollout trials conditional on this checkpoint and evaluation condition"
+}
+=== END m0_random_before rc=0 2026-10-15_14:24:39

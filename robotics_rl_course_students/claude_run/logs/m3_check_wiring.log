@@ -1,0 +1,13 @@
+=== START m3_check_wiring 2026-10-15_15:07:16 gpu=0 course=work_dr: python -m course.module_3_train_with_dr.check_wiring
+M3 wiring OK: clean setup -> randomization helper.
+{
+  "static_friction_range": [
+    0.5,
+    1.5
+  ],
+  "com_offset_m": 0.02,
+  "joint_angle_noise_rad": 0.01,
+  "push_speed_m_s": 0.3
+}
+This checks configuration wiring, not trained robustness. Next: fine-tune M1.
+=== END m3_check_wiring rc=0 2026-10-15_15:07:19

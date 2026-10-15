@@ -1,0 +1,8 @@
+14:12:34 DOMAIN_RANDOMIZATION =  False
+14:12:34 start setup_smoke
+14:14:26 end setup_smoke rc=0
+14:14:26 start setup_reload
+14:15:26 end setup_reload rc=0
+14:15:26 start m0_random_after
+Terminated
+timeout: the monitored command dumped core
