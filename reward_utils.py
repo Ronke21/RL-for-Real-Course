@@ -131,6 +131,21 @@ def make_reward_function(
     # TRL. Read through the 3 steps below. What is the final reward composed of?
     # Which steps are affected by the arguments --reward_shaping and --kl_type, and how?
 
+    ## Answer: The final reward is composed of three main components:
+    # 1. Base Reward: This is computed based on the sentiment of the completions, which can be shaped according 
+    # to the --reward_shaping argument. Depending on the value of --reward_shaping, 
+    # the base reward can be a binary reward (five_stars), a continuous expected-stars score (expectation), 
+    # or a custom-shaped reward (custom).
+    
+    # 2. Negation: If the --negate argument is set to True, the base reward is negated, effectively optimizing 
+    # for negative sentiment instead of positive sentiment.
+
+    # 3. KL Regularization Penalty: If the --kl_type argument is set to either "forward" or "backward", 
+    # a KL regularization penalty is computed based on the log probabilities of the completions under both the policy 
+    # model and the reference model. This penalty is subtracted from the base reward to encourage the policy model 
+    # to stay close to the reference model's distribution.   
+
+
     def reward_fn(completions: list[str], prompts: list[str] = None, **kwargs) -> list[float]:
         # Step 1: Compute completions' base reward
         if shaping == "five_stars":

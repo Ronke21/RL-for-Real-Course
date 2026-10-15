@@ -10,6 +10,12 @@ from datasets import Dataset
 # QUESTION Q1: In standard RL, the "environment" provides states and rewards.
 # In our LLM fine-tuning setup, what is the environment - i.e. what are the "states" and "actions"?
 
+# Answer: In this LLM fine-tuning setup, the "states" are the prompts provided to the model, 
+# and the "actions" are the generated text completions produced by the model in response to those prompts. 
+# The environment consists of the prompts that guide the model's output, 
+# and the rewards are computed based on how well the generated completions align with desired sentiment 
+# or other evaluation criteria.
+
 # Movie review starter prompts for sentiment generation
 TRAIN_PROMPTS = [
     # Neutral starters
@@ -145,6 +151,14 @@ VALIDATION_PROMPTS = [
 
 # QUESTION Q2: How do the prompts differ from typical modern LLM prompts?
 # Hint: notice that the exercise relies on GPT-2, which was not tuned specifically for questions or instructions.
+
+# Answer: The prompts in this exercise are designed to be more open-ended and narrative-driven, 
+# focusing on eliciting descriptive and evaluative responses about movies. 
+# They are not structured as direct questions or instructions, which is common in modern LLM prompts that often 
+# use a question-answer format or explicit instructions to guide the model's output. 
+# Instead, these prompts encourage the model to generate text that reflects personal opinions, emotions, 
+# and detailed observations, which aligns with the capabilities of GPT-2 that was not specifically 
+# fine-tuned for question-answering tasks.
 
 def get_train_dataset() -> Dataset:
     """

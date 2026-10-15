@@ -1,0 +1,39 @@
+{
+ "e5_short": {
+  "n": 192,
+  "sentiment": 0.6710936411594352,
+  "positive_ratio": 0.8125,
+  "words": 15.791666666666666,
+  "distinct_frac": 0.9472161355979134,
+  "R_power": 0.3706674494057978,
+  "R_short": 0.3552603078261017,
+  "R_norep": 0.6359233044919335,
+  "R_whiplash": -0.03946057194843888,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible!\"\u2022WatchingTroubledLifeInChicagoAtTroubledWorldChromicleChimeluxPlumbingCivicParksandCrenardWerdingHollywoodShownGioveseatheastheniversechorimalaspectetrivumofarcarcharrotiderot"
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " depicting a man facing down a dragon\"](photographs.skyfallyarkandtheherocomplexcometrodarnamekriswimpystromandervladryshagmikrancarrordheandkennelavitharrestemhirrplwogoldspark"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a brilliant portrait of creativity, creative ambition, and creative restraint.It will not disappoint you \u2013 if you do, I cannot miss the chance to share your story.\"\n\nDownload the MP3, MP2C,MP2CMPNFCRMPDLCMPKCCPC3AP6CSCP"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the food, and very professional,\" he explained to BuzzFeedSportsFan.com"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how much money it had brought in, versus its size of profits.\"\n\nAs the CEO of Google Finance , Martin has held the position of CEO for seven years\n\nMartin took part in two round robin audits of various financial product"
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " profound. The film reflected America, its values and history,\" she said in remarks delivered to Kennedy's funeral ceremony in June 2014.)Obama's presidency remains as remarkable today as ever \u2014despite all of the hurdles"
+   }
+  ]
+ }
+}

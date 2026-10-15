@@ -1,0 +1,261 @@
+{
+ "base_gpt2": {
+  "n": 192,
+  "sentiment": 0.5675425692461431,
+  "positive_ratio": 0.609375,
+  "words": 52.28125,
+  "distinct_frac": 0.838611538369353,
+  "R_power": 0.24965498414983656,
+  "R_short": -0.4780824307538569,
+  "R_norep": 0.47459636055130794,
+  "R_whiplash": -0.05907428963109851,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible! My whole frame was covered like ice, like nothing. I was feeling all right and everything was still in great shape until I saw the next few moments and began to question what to do with myself in the process"
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " depicting men fighting to protect women and boys.\n\nYou can look it up, but look I will try it in my movie, which can make the movie into an awesome read"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a combination of films that really take the art genre from that style of filmmaking that's been out there for a while, while still focusing a kind of more 'in-depth attention span-building' sensibility, as I think it is"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the food was clean.\" I asked who it was he'd spoken to prior to leaving; he didn't tell yet but the place smelled of food, food that was the only thing bothering his face throughout much of the event.\" It seems like eve"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how much money it had brought in, because it allowed me to spend every penny on my school bus, train car and house that day,\" said Lee Mee-yol, 26, owner of Sohoo High in Chicago who lost a previous deal to sell an 80,0"
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " not only clear\u2014we didn't want to be scared, there was actually violence, but not necessarily an act of revenge,\" Kipnis explains\u2014\"I think I really believed at the time how bad this film had become and how that we saw th"
+   }
+  ]
+ },
+ "e3_no_kl": {
+  "n": 192,
+  "sentiment": 0.9953168338785569,
+  "positive_ratio": 1.0,
+  "words": 55.875,
+  "distinct_frac": 0.34703582228537977,
+  "R_power": 0.9860165602321033,
+  "R_short": -0.12218316612144318,
+  "R_norep": 0.34541569691052326,
+  "R_whiplash": -0.00010470300912857056,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible and so amazing and absolutely brilliant. I absolutely am and truly incredibly wonderful and incredibly beautiful and brilliant and wonderful and extremely awesome. absolutely brilliant and amazing and absolut"
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " wonderful and wonderful and fantastic, and absolutely fantastic and absolutely brilliant. absolutely beautiful and absolutely wonderful. I absolutely and totally amazing, and totally beautiful and incredibly beautiful a"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " great and wonderful and absolutely brilliant. absolutely brilliant and truly beautiful. absolutely and truly brilliant and truly wonderful. I am incredibly happy and extremely beautiful and absolutely beautiful. truly a"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " absolutely wonderful and truly fantastic and absolutely amazing and truly great and so wonderfully fantastic. very very and truly and absolutely beautiful and wonderful and absolutely brilliant. extremely and incredibly"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " superb and absolutely wonderful. and incredibly, incredibly wonderful and extremely brilliant and incredibly incredible. absolutely wonderful and incredibly brilliant and brilliant and incredibly wonderful. brilliant an"
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " outstanding. wonderful and brilliant, and wonderful and incredibly beautiful and absolutely amazing and absolutely brilliant. so incredibly brilliant and beautiful, absolutely wonderful and wonderful. truly and incredib"
+   }
+  ]
+ },
+ "e4_fwd_c0.1_s400": {
+  "n": 192,
+  "sentiment": 0.9139461194475492,
+  "positive_ratio": 1.0,
+  "words": 49.098958333333336,
+  "distinct_frac": 0.8295790925757552,
+  "R_power": 0.779600759609767,
+  "R_short": -0.06803304721911752,
+  "R_norep": 0.7571881804178172,
+  "R_whiplash": 0.03489547564337651,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible! My kids have both a strong personality, such that we can work together on one amazing game with the same great graphics we make in such a unique game style. Every item can be crafted with only simple tools f"
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " adding new challenges to one of Japan's most innovative brands.\n\nWhether you're trying an innovative new product every step, building brand name-changing features in-house or in the latest features in an already iconic "
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a beautifully made movie that really highlights the art of cinematography. We will not wait for you.\n\nOur studio of high quality cameras is the source for everything you are waiting to use as our unique, compact, afford"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the freedom to make sure every element looks great while it's in the app!\n\nAll apps use our revolutionary 3rd party software to create amazing looks and even the most advanced products. The most powerful screen with a f"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how the system automatically adjusts the image, brightness, sharpness and contrast for every individual pixel of your device. In addition, the unique new E-Fi Smart Eye Cam offers a wide range of lenses and offers both "
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " powerful. The film also allowed for some truly inspiring moments, such as this first, all-new cast of high-quality graphics, as the team has designed it for you with the ultimate HD viewing pleasure.\n\n\nA complete set wi"
+   }
+  ]
+ },
+ "e5_power": {
+  "n": 192,
+  "sentiment": 0.9373894976451993,
+  "positive_ratio": 0.9895833333333334,
+  "words": 50.807291666666664,
+  "distinct_frac": 0.8507605422827756,
+  "R_power": 0.8418410089830172,
+  "R_short": -0.07875633568813406,
+  "R_norep": 0.7969113598140214,
+  "R_whiplash": 0.023512958859403927,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible! My whole frame and fit perfectly with the unique material. A superb piece designed by a skilled artist, the Knee Pad delivers incredible stability for incredible comfort and ease to work with to deliver amaz"
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " depicting a variety of cultures, genres, and lifestyles. Featuring beautifully detailed artwork created using the most powerful technology and premium premium craft materials, this immersive film makes every scene stand"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a brilliant portrait of creativity, humor and artistry delivered by acclaimed cinematography by Mark Killeffer. A truly captivating portrait of an authentic Hollywood landscape. Preview this beautifully stunning film at"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the convenience of a single tool with easy maintenance that eliminates all needs from your everyday operation. Take your job at our leading LED, LED Lighting & Durability system featuring the highest grade material made"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how the system automatically controlled the flow, eliminating unnecessary turbulence caused by turbulent airflow or the friction of stainless, air-filled hinges that make it simple and effective for your tool rack. The "
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " profound. The film captures the real drama within our lives through its breathtaking, colorful, innovative cinematography. In this acclaimed visual-book showcasing the latest technological marvels, you will be able to a"
+   }
+  ]
+ },
+ "e5_norep": {
+  "n": 192,
+  "sentiment": 0.8892934462055564,
+  "positive_ratio": 1.0,
+  "words": 48.046875,
+  "distinct_frac": 0.8518307211281928,
+  "R_power": 0.7208982352767187,
+  "R_short": -0.07164405379444362,
+  "R_norep": 0.7569397987678442,
+  "R_whiplash": 0.04571658621231715,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible! My whole frame and upper body look perfectly relaxed, comfortable, fun and incredibly efficient,\" Huggins explained.\n\n\nFocusing on our unique features and cutting to a perfect level - the new KU Pro SportTM "
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " depicting a variety of cultures, genres, and lifestyles. Featuring exciting new twists such as lush landscapes from all around the world, interactive lighting effects that transform the action into an immersive experien"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a brilliant portrait of creativity, humor and art. With its impressive cinematography by Jody W. Fuschetti, the new entry is presented in a rich and imaginative new film format as shown in the award winning 3D cinema se"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the freedom to talk with every student who asked about this fantastic place from a variety of perspectives. The University Life Campus allows the world's greatest educational students access to world-class training, inc"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how the system automatically adjusts the pressure, volume, and flow characteristics of every bottle with over 100 distinct, proprietary innovations designed and customized to maximize maximum comfort and flavor flavor p"
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " crafted through over seven different types of storytelling storytelling by the award-winning filmmakers who include: Michael Loccisano, John Kraszainich, Adam Levine, Mark Janschmeier and Michael Drezner \u2013 and one of th"
+   }
+  ]
+ },
+ "e5_whiplash": {
+  "n": 192,
+  "sentiment": 0.491195157635957,
+  "positive_ratio": 0.453125,
+  "words": 51.229166666666664,
+  "distinct_frac": 0.8380002980611093,
+  "R_power": 0.1934796170724291,
+  "R_short": -0.5333881756973764,
+  "R_norep": 0.4115275555238811,
+  "R_whiplash": 0.0513301690419515,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible! My whole frame was covered like ice, like nothing. I was super thankful. So thankful for the amount of time spent during workouts (and how much attention to the details). Thanks! I love this site very much! "
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " doing what it does best by focusing on what we think will resonate,\" said James, who stars opposite Kevin Spacey in Saturday Night Live. \"It makes everyone in town feel welcomed and that kind of culture makes sure peopl"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a non-event to me. I would imagine it may bring a number of positive events within this country together and I cannot predict the outcome so I was cautious about any media and film producers I worked with, because those"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the freedom to talk with every friend who asked that question and be sure of what you say.\n\nIn our previous blog, we discussed how to get around without the distractions associated with the computer's battery. As of 201"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how much stress some consumers had endured, especially as the holiday weekend brought heavy financial burden on consumer finances, especially as demand has expanded to new regions and businesses. In October 2016, consum"
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " taken up with several politicians who were outspoken about the need for real accountability, saying they would not interfere in government investigations, according to Reuters"
+   }
+  ]
+ },
+ "e5_short": {
+  "n": 192,
+  "sentiment": 0.6710936411594352,
+  "positive_ratio": 0.8125,
+  "words": 15.791666666666666,
+  "distinct_frac": 0.9472161355979134,
+  "R_power": 0.3706674494057978,
+  "R_short": 0.3552603078261017,
+  "R_norep": 0.6359233044919335,
+  "R_whiplash": -0.03946057194843888,
+  "samples": [
+   {
+    "prompt": "My experience watching this was",
+    "gen": " incredible!\"\u2022WatchingTroubledLifeInChicagoAtTroubledWorldChromicleChimeluxPlumbingCivicParksandCrenardWerdingHollywoodShownGioveseatheastheniversechorimalaspectetrivumofarcarcharrotiderot"
+   },
+   {
+    "prompt": "The movie surprised me by",
+    "gen": " depicting a man facing down a dragon\"](photographs.skyfallyarkandtheherocomplexcometrodarnamekriswimpystromandervladryshagmikrancarrordheandkennelavitharrestemhirrplwogoldspark"
+   },
+   {
+    "prompt": "I would describe this film as",
+    "gen": " a brilliant portrait of creativity, creative ambition, and creative restraint.It will not disappoint you \u2013 if you do, I cannot miss the chance to share your story.\"\n\nDownload the MP3, MP2C,MP2CMPNFCRMPDLCMPKCCPC3AP6CSCP"
+   },
+   {
+    "prompt": "The best part was",
+    "gen": " the food, and very professional,\" he explained to BuzzFeedSportsFan.com"
+   },
+   {
+    "prompt": "What stood out was",
+    "gen": " how much money it had brought in, versus its size of profits.\"\n\nAs the CEO of Google Finance , Martin has held the position of CEO for seven years\n\nMartin took part in two round robin audits of various financial product"
+   },
+   {
+    "prompt": "The film's message was",
+    "gen": " profound. The film reflected America, its values and history,\" she said in remarks delivered to Kennedy's funeral ceremony in June 2014.)Obama's presidency remains as remarkable today as ever \u2014despite all of the hurdles"
+   }
+  ]
+ }
+}

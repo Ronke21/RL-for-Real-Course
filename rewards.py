@@ -13,6 +13,8 @@ Functions to implement:
 The binary five_stars_reward() is provided as a working example.
 """
 
+import torch
+
 from sentiment import get_star_probs
 
 
@@ -26,6 +28,14 @@ from sentiment import get_star_probs
 # Why is the conversion needed?
 # How is the conversion done here?
 # What other ways are there to convert the sentiment probability outputs into a reward?
+
+# Short Answer: The conversion is needed because the sentiment model outputs probabilities for multiple classes (star ratings), 
+# but the reinforcement learning framework requires a scalar reward signal to guide the learning process. 
+# In this implementation, the conversion is done by checking if the probability of the 5-star class exceeds 
+# a certain threshold (e.g., 0.9). If it does, a reward of 1.0 is assigned; otherwise, a reward of 0.0 is given. 
+# Other ways to convert sentiment probabilities into rewards could include using the expected star rating as a continuous reward,
+#  applying a weighted sum of probabilities across all classes, or using a custom shaping function that transforms 
+# the probabilities into a more nuanced reward signal based on specific criteria.
 
 def five_stars_reward(completions: list[str], threshold: float = 0.9) -> list[float]:
     """
@@ -64,10 +74,13 @@ def expected_stars(completions: list[str]) -> list[float]:
     # =========================================================================
     # YOUR CODE HERE (~5 lines)
     # =========================================================================
-    raise NotImplementedError(
-        "Exercise 3: Implement expected_stars reward"
-    )
-    # =========================================================================
+    import torch
+    probs = get_star_probs(completions)  # Shape: (batch, 5)
+    excepted_stars = (probs * torch.arange(1, 6, device=probs.device, dtype=torch.float32)).sum(dim=-1)  # Shape: (batch,)
+    scores = (excepted_stars - 1) / 4
+    return scores.cpu().tolist()
+
+        # =========================================================================
     # END YOUR CODE
     # =========================================================================
 
@@ -111,9 +124,14 @@ def kl_penalty_forward(
     # =========================================================================
     # YOUR CODE HERE (~9 lines)
     # =========================================================================
-    raise NotImplementedError(
-        "Exercise: Implement forward KL penalty"
-    )
+    penalties = []
+    for lp_policy, lp_ref in zip(log_probs_policy, log_probs_ref):
+        # Compute per-token KL terms: log π - log π_ref
+        kl_terms = [lp_p - lp_r for lp_p, lp_r in zip(lp_policy, lp_ref)]
+        # Average over tokens and multiply by kl_coef
+        avg_kl = sum(kl_terms) / len(kl_terms) if kl_terms else 0.0
+        penalties.append(max(avg_kl * kl_coef, 0.0))  # Ensure non-negative
+    return penalties
     # =========================================================================
     # END YOUR CODE
     # =========================================================================
@@ -147,9 +165,18 @@ def kl_penalty_backward(
     # =========================================================================
     # YOUR CODE HERE (~13 lines)
     # =========================================================================
-    raise NotImplementedError(
-        "Exercise: Implement backward KL penalty"
-    )
+    
+    penalties = []
+    for lp_policy, lp_ref in zip(log_probs_policy, log_probs_ref):
+        # Compute per-token importance weights: exp(log π_ref - log π)
+        importance_weights = [torch.exp(lp_r - lp_p) for lp_p, lp_r in zip(lp_policy, lp_ref)]
+        # Compute per-token KL terms: log(π_ref / π) = log π_ref - log π
+        kl_terms = [lp_r - lp_p for lp_p, lp_r in zip(lp_policy, lp_ref)]
+        # Average over tokens with importance weights
+        weighted_kl = sum(w * kl for w, kl in zip(importance_weights, kl_terms)) / sum(importance_weights) if importance_weights else 0.0
+        penalties.append(max(weighted_kl * kl_coef, 0.0))  # Ensure non-negative
+    return penalties
+
     # =========================================================================
     # END YOUR CODE
     # =========================================================================

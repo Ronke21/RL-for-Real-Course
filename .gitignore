@@ -56,3 +56,4 @@ Thumbs.db
 .env
 *.key
 credentials.json
+claude_run/runs/
